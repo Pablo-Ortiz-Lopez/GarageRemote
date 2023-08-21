@@ -1,4 +1,4 @@
-# Multi-Door Garage Remote Repository
+# Multi-Door Garage Remote
 
 ![Board Front](electronics/board_front.jpg)
 
