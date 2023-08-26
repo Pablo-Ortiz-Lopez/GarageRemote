@@ -1363,7 +1363,7 @@
   (symbol (lib_id "power:+5V") (at 236.22 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0007fb6f-a226-4cdc-9bcd-fb515a85413f)
-    (property "Reference" "#PWR03" (at 236.22 135.89 0)
+    (property "Reference" "#PWR?" (at 236.22 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 236.22 127 0)
@@ -1377,9 +1377,9 @@
     )
     (pin "1" (uuid aee8137b-af73-44c3-9859-cfc341762129))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR053") (unit 1)
@@ -1405,7 +1405,7 @@
     )
     (pin "1" (uuid e8c2c57f-9b72-43be-a1c9-8d6ee1b76896))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR056") (unit 1)
         )
@@ -1416,7 +1416,7 @@
   (symbol (lib_id "Device:C_Polarized_Small") (at 153.67 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 03f0de00-5cd4-448d-82c2-5f528ab63859)
-    (property "Reference" "C10" (at 149.86 85.09 0)
+    (property "Reference" "C?" (at 149.86 85.09 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 156.21 87.63 0)
@@ -1431,9 +1431,9 @@
     (pin "1" (uuid 27a7a71d-4f0b-422d-bcc2-bd54410341dd))
     (pin "2" (uuid 32d58222-b6e3-42b7-b24e-00e950c0eaa7))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "C10") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "C23") (unit 1)
@@ -1445,7 +1445,7 @@
   (symbol (lib_id "power:+5V") (at 273.05 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 09d26c09-128b-4255-95bf-5dbd88ae060c)
-    (property "Reference" "#PWR017" (at 273.05 74.93 0)
+    (property "Reference" "#PWR?" (at 273.05 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 273.05 66.04 0)
@@ -1459,9 +1459,9 @@
     )
     (pin "1" (uuid 57b5eed3-5b34-4dfd-9446-4600c942a232))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR052") (unit 1)
@@ -1473,7 +1473,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Socket") (at 273.05 119.38 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0a6ed121-d543-4a42-9309-fa68fb38a530)
-    (property "Reference" "J6" (at 274.32 117.475 90)
+    (property "Reference" "J?" (at 274.32 117.475 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Button32" (at 267.97 120.65 90)
@@ -1488,9 +1488,9 @@
     (pin "1" (uuid 07b1382e-fce6-4f32-9c1f-56a1ec855f50))
     (pin "2" (uuid 7070003a-7f91-454d-9a95-c98d051d3f9e))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "J6") (unit 1)
+          (reference "J?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "J7") (unit 1)
@@ -1517,7 +1517,7 @@
     (pin "1" (uuid a9d85f41-794e-4f0d-9d17-634d3c0ff2ef))
     (pin "2" (uuid eb47d454-2c35-4d99-a062-12bd8d0009b6))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D2") (unit 1)
         )
@@ -1528,7 +1528,7 @@
   (symbol (lib_id "Diode:1N4001") (at 205.74 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0ba301d9-921e-4e59-b41b-7539ca9717ed)
-    (property "Reference" "D2" (at 208.28 72.39 0)
+    (property "Reference" "D?" (at 208.28 72.39 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1N4001" (at 200.66 76.2 0)
@@ -1549,9 +1549,9 @@
     (pin "1" (uuid f5e6ba75-1668-45f4-81cc-dc45dc02995c))
     (pin "2" (uuid 47b5d3a4-3e04-4c98-b68a-538afc8852b6))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "D2") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D5") (unit 1)
@@ -1577,7 +1577,7 @@
     )
     (pin "1" (uuid 344a2def-d4e5-47a5-a067-a79f91bd6843))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR048") (unit 1)
         )
@@ -1588,7 +1588,7 @@
   (symbol (lib_id "Diode:1N4001") (at 205.74 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 12b01dec-0799-480a-b709-5a203dba9bf5)
-    (property "Reference" "D2" (at 208.28 41.91 0)
+    (property "Reference" "D?" (at 208.28 41.91 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1N4001" (at 200.66 45.72 0)
@@ -1609,9 +1609,9 @@
     (pin "1" (uuid c241c776-c02b-494a-a156-a35a449753af))
     (pin "2" (uuid 25ebb73e-cbc7-4171-be06-c1cfdc8be2ef))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "D2") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D9") (unit 1)
@@ -1623,7 +1623,7 @@
   (symbol (lib_id "power:+5V") (at 273.05 100.33 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1bd180a6-af7f-464c-b819-5fc820df7584)
-    (property "Reference" "#PWR017" (at 273.05 104.14 0)
+    (property "Reference" "#PWR?" (at 273.05 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 273.05 95.25 0)
@@ -1637,9 +1637,9 @@
     )
     (pin "1" (uuid f63b24cb-a749-4796-888b-1ebc638f20b2))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR060") (unit 1)
@@ -1651,7 +1651,7 @@
   (symbol (lib_id "Diode:1N4001") (at 205.74 102.87 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1ddb4456-6fe2-41a0-83d7-054b71457b0b)
-    (property "Reference" "D2" (at 208.28 101.6 0)
+    (property "Reference" "D?" (at 208.28 101.6 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1N4001" (at 200.66 105.41 0)
@@ -1672,9 +1672,9 @@
     (pin "1" (uuid ae45e705-c8d0-4e0c-97a9-087e0ab2caac))
     (pin "2" (uuid 870d0aae-5af9-447f-b558-df38aa5bc09a))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "D2") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D7") (unit 1)
@@ -1686,7 +1686,7 @@
   (symbol (lib_id "Diode:1N4001") (at 256.54 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1de52772-27dc-462c-a002-491c799adcb8)
-    (property "Reference" "D2" (at 259.08 72.39 0)
+    (property "Reference" "D?" (at 259.08 72.39 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1N4001" (at 251.46 76.2 0)
@@ -1707,9 +1707,9 @@
     (pin "1" (uuid 4a054f46-c942-4e6e-868c-8483007e7216))
     (pin "2" (uuid bed83c84-fd09-4167-8d90-7952b7296fdf))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "D2") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D15") (unit 1)
@@ -1721,7 +1721,7 @@
   (symbol (lib_id "power:GND") (at 125.73 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 20c2dc1d-af8d-4f75-a208-546fcd80e95a)
-    (property "Reference" "#PWR08" (at 125.73 144.78 0)
+    (property "Reference" "#PWR?" (at 125.73 144.78 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 125.73 143.51 0)
@@ -1735,9 +1735,9 @@
     )
     (pin "1" (uuid ce399d4c-db8c-4113-afeb-9e061bb7d754))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR055") (unit 1)
@@ -1749,7 +1749,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Socket") (at 273.05 90.17 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3e4bc23b-1a7c-48b9-9c63-21b413a32121)
-    (property "Reference" "J6" (at 274.32 88.265 90)
+    (property "Reference" "J?" (at 274.32 88.265 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Button22" (at 267.97 91.44 90)
@@ -1764,9 +1764,9 @@
     (pin "1" (uuid f25481f9-5155-4ca5-8ea5-8d2fe64748f8))
     (pin "2" (uuid 8b4c0589-dcbc-4645-8107-89fef140d1ab))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "J6") (unit 1)
+          (reference "J?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "J9") (unit 1)
@@ -1792,7 +1792,7 @@
     )
     (pin "1" (uuid 500531a5-2607-4866-940f-65ea0184f20a))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR050") (unit 1)
         )
@@ -1803,7 +1803,7 @@
   (symbol (lib_id "Diode:1N4001") (at 255.27 102.87 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 43cb3e12-f13b-467c-a248-c490c42018bb)
-    (property "Reference" "D2" (at 257.81 101.6 0)
+    (property "Reference" "D?" (at 257.81 101.6 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1N4001" (at 250.19 105.41 0)
@@ -1824,9 +1824,9 @@
     (pin "1" (uuid 105a26a7-227a-4b60-a85c-aa230df1ac58))
     (pin "2" (uuid 72984e5c-1ad9-46ae-81be-63b392b02510))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "D2") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D6") (unit 1)
@@ -1838,7 +1838,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Socket") (at 273.05 59.69 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4ad1cb01-8013-4b0e-9e9f-ed4994aaf0ce)
-    (property "Reference" "J6" (at 274.32 57.785 90)
+    (property "Reference" "J?" (at 274.32 57.785 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Button12" (at 267.97 60.96 90)
@@ -1853,9 +1853,9 @@
     (pin "1" (uuid 33675ea9-5d63-40ce-b88c-0821a3054cbd))
     (pin "2" (uuid 0c4daa18-9d0f-417a-b831-a5ee200dca58))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "J6") (unit 1)
+          (reference "J?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "J8") (unit 1)
@@ -1867,7 +1867,7 @@
   (symbol (lib_id "power:+5V") (at 223.52 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4b59281d-325b-4049-b7aa-382cbe56afc0)
-    (property "Reference" "#PWR017" (at 223.52 74.93 0)
+    (property "Reference" "#PWR?" (at 223.52 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 223.52 66.04 0)
@@ -1881,9 +1881,9 @@
     )
     (pin "1" (uuid 5660f069-6760-48ec-8744-50264994e16b))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR045") (unit 1)
@@ -1910,7 +1910,7 @@
     (pin "1" (uuid c94066a2-2eb4-42ac-a36d-9eb6aedb7998))
     (pin "2" (uuid b5ca8c61-6f2f-420b-81d3-3265e79b9f0b))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R7") (unit 1)
         )
@@ -1936,7 +1936,7 @@
     (pin "1" (uuid 75e9c8bc-d626-4d44-b946-1429f6c9e6ca))
     (pin "2" (uuid 788b15cc-bbf4-4c8d-a4b8-3de0129ed7f0))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D10") (unit 1)
         )
@@ -1947,7 +1947,7 @@
   (symbol (lib_id "power:GND") (at 139.7 95.25 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 55b7d109-dfaf-40d4-b106-c37995f756a5)
-    (property "Reference" "#PWR08" (at 139.7 101.6 0)
+    (property "Reference" "#PWR?" (at 139.7 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 139.7 100.33 0)
@@ -1961,9 +1961,9 @@
     )
     (pin "1" (uuid dae4386c-d465-4bf5-8a35-90189ea717b7))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR038") (unit 1)
@@ -1989,7 +1989,7 @@
     )
     (pin "1" (uuid 2ffbe43b-0de1-40bd-8a33-0bd682804675))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR042") (unit 1)
         )
@@ -2014,7 +2014,7 @@
     )
     (pin "1" (uuid 57725712-538e-4ff5-9497-deef21d274a0))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR057") (unit 1)
         )
@@ -2045,7 +2045,7 @@
     (pin "6" (uuid 92618cc2-09e7-40d8-afb6-f9a2559ae59a))
     (pin "7" (uuid e0829c3d-59f8-4d4a-8b88-b772612e8365))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "U5") (unit 1)
         )
@@ -2056,7 +2056,7 @@
   (symbol (lib_id "power:+5V") (at 125.73 110.49 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 753c028a-14ba-4768-9d59-f6ea89c023c9)
-    (property "Reference" "#PWR02" (at 125.73 114.3 0)
+    (property "Reference" "#PWR?" (at 125.73 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 125.73 105.41 0)
@@ -2070,9 +2070,9 @@
     )
     (pin "1" (uuid eca0ef43-5101-4d5e-959a-cf41a6f5b23e))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR054") (unit 1)
@@ -2099,7 +2099,7 @@
     (pin "1" (uuid ca006254-e466-4259-82cd-37ca6b22c43b))
     (pin "2" (uuid a8403d12-216e-4caf-beeb-9237651f0eed))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R5") (unit 1)
         )
@@ -2129,7 +2129,7 @@
     (pin "5" (uuid f44b4aa2-ff3c-472b-95be-d3223304d236))
     (pin "6" (uuid 8338f962-bb2e-4f2d-834c-31a1f680cc04))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "U6") (unit 1)
         )
@@ -2140,7 +2140,7 @@
   (symbol (lib_id "power:+5V") (at 273.05 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7ed370ff-3ebc-4bc0-8a21-be7e4212b675)
-    (property "Reference" "#PWR017" (at 273.05 44.45 0)
+    (property "Reference" "#PWR?" (at 273.05 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 273.05 35.56 0)
@@ -2154,9 +2154,9 @@
     )
     (pin "1" (uuid 60ac0fc9-b548-4088-8bb3-13c3a88694fe))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR051") (unit 1)
@@ -2168,7 +2168,7 @@
   (symbol (lib_id "power:+3.3V") (at 161.29 80.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8036b2d1-f209-43c7-8fb8-fdc36766b3ce)
-    (property "Reference" "#PWR012" (at 161.29 83.82 0)
+    (property "Reference" "#PWR?" (at 161.29 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 161.29 74.93 0)
@@ -2182,9 +2182,9 @@
     )
     (pin "1" (uuid 57fa9efc-d2ad-4324-b07b-837d26ce120f))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR012") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR041") (unit 1)
@@ -2211,7 +2211,7 @@
     (pin "1" (uuid 58f9616a-6d38-4883-b858-52c179e38a60))
     (pin "2" (uuid dbf6e793-506e-4db9-9400-514d89cde2d0))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D1") (unit 1)
         )
@@ -2222,7 +2222,7 @@
   (symbol (lib_id "power:+5V") (at 224.79 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8afb8065-0114-4b40-8819-6606fa7bcf2b)
-    (property "Reference" "#PWR017" (at 224.79 44.45 0)
+    (property "Reference" "#PWR?" (at 224.79 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 224.79 35.56 0)
@@ -2236,9 +2236,9 @@
     )
     (pin "1" (uuid 71947e12-c1cc-4e98-8800-cb667b2a56a6))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR047") (unit 1)
@@ -2250,7 +2250,7 @@
   (symbol (lib_id "power:+5V") (at 223.52 100.33 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 93e1b2d1-aa50-4fe9-9ca4-5dbc085964a8)
-    (property "Reference" "#PWR017" (at 223.52 104.14 0)
+    (property "Reference" "#PWR?" (at 223.52 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 223.52 95.25 0)
@@ -2264,9 +2264,9 @@
     )
     (pin "1" (uuid 0ea08117-76f6-48d4-8054-79d25b954ec6))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR046") (unit 1)
@@ -2278,7 +2278,7 @@
   (symbol (lib_id "power:+5V") (at 119.38 80.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 94a24384-bea6-4f4d-b574-003bd01b3a62)
-    (property "Reference" "#PWR02" (at 119.38 83.82 0)
+    (property "Reference" "#PWR?" (at 119.38 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 119.38 74.93 0)
@@ -2292,9 +2292,9 @@
     )
     (pin "1" (uuid b51de49b-3211-443e-80ed-c7b2904368a9))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR035") (unit 1)
@@ -2320,7 +2320,7 @@
     )
     (pin "1" (uuid 824ee2db-b92f-4dd8-b4d9-98d7fed8cbab))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR058") (unit 1)
         )
@@ -2346,7 +2346,7 @@
     (pin "1" (uuid 7de68947-ef86-4bff-8763-9579c52730b0))
     (pin "2" (uuid e51c953f-7a48-4265-ad19-9739cbc39beb))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R3") (unit 1)
         )
@@ -2372,7 +2372,7 @@
     (pin "1" (uuid b225b857-47ea-4e8f-910a-225ccfa02fd9))
     (pin "2" (uuid 0fb690fa-d833-4a10-88ae-ca2e611411b2))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R6") (unit 1)
         )
@@ -2383,7 +2383,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Socket") (at 77.47 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a828e579-db3f-4ea3-978f-ac3be8ace45e)
-    (property "Reference" "J6" (at 76.2 78.74 0)
+    (property "Reference" "J?" (at 76.2 78.74 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Battery Port" (at 78.74 83.82 0)
@@ -2398,9 +2398,9 @@
     (pin "1" (uuid 2344b8c9-9ad8-4149-803f-bb87eef62171))
     (pin "2" (uuid 4dfea87e-f064-426c-943c-349def75a73e))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "J6") (unit 1)
+          (reference "J?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "J11") (unit 1)
@@ -2426,7 +2426,7 @@
     )
     (pin "1" (uuid 6abb8631-0365-4ea1-a16f-a118db4025e8))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR049") (unit 1)
         )
@@ -2451,7 +2451,7 @@
     )
     (pin "1" (uuid b310eec9-0988-4cc6-bbe6-b4084ad0bd48))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR043") (unit 1)
         )
@@ -2476,7 +2476,7 @@
     )
     (pin "1" (uuid dcfb55bf-02dd-4570-b4b8-31703741ea91))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR059") (unit 1)
         )
@@ -2501,7 +2501,7 @@
     )
     (pin "1" (uuid 306b79c1-7001-4ee3-8952-d83536a20ef4))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "#PWR044") (unit 1)
         )
@@ -2527,7 +2527,7 @@
     (pin "1" (uuid 769bc320-8461-4831-972a-46147514ea99))
     (pin "2" (uuid 4abd1bd5-644d-4266-b1ae-bf0491867e31))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R8") (unit 1)
         )
@@ -2553,7 +2553,7 @@
     (pin "1" (uuid ef4b0ad1-8199-4359-a8f7-f30386968241))
     (pin "2" (uuid 1a871fc9-64b9-49c7-820a-d6412fd9abed))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R10") (unit 1)
         )
@@ -2564,7 +2564,7 @@
   (symbol (lib_id "Device:C_Polarized_Small") (at 127 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bb2d873d-c836-48f4-8271-18b77ae76b17)
-    (property "Reference" "C7" (at 123.19 85.09 0)
+    (property "Reference" "C?" (at 123.19 85.09 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 129.54 87.63 0)
@@ -2579,9 +2579,9 @@
     (pin "1" (uuid 6e08a10c-3dff-4c6c-af8c-e7a352b367f9))
     (pin "2" (uuid 590fe3d8-7310-4561-972e-7b1b3789a784))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "C7") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "C22") (unit 1)
@@ -2608,7 +2608,7 @@
     (pin "1" (uuid e9bf1060-cfb6-452e-9516-5c167b8a0e75))
     (pin "2" (uuid 199a172a-973b-4da9-8192-cd0e092fb191))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D4") (unit 1)
         )
@@ -2635,7 +2635,7 @@
     (pin "2" (uuid 7557ef3f-cf0c-4498-813c-dad946b3494b))
     (pin "3" (uuid f90dc1a6-0446-4c04-a323-374f948a43c8))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "Q1") (unit 1)
         )
@@ -2661,7 +2661,7 @@
     (pin "1" (uuid 6d199bd3-3ceb-44a7-812d-f636adb6255a))
     (pin "2" (uuid 0ec15e9f-00ac-48a4-bec3-89ef5cfa0de3))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D3") (unit 1)
         )
@@ -2687,7 +2687,7 @@
     (pin "1" (uuid 36867959-1a19-4a5a-8b31-8330c72c9bef))
     (pin "2" (uuid f1d0221f-e0b7-43ed-9e28-552beada14b3))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D11") (unit 1)
         )
@@ -2698,7 +2698,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Socket") (at 223.52 90.17 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d4629244-6631-4d59-a68b-cac25896a3c0)
-    (property "Reference" "J6" (at 224.79 88.265 90)
+    (property "Reference" "J?" (at 224.79 88.265 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Button21" (at 218.44 91.44 90)
@@ -2713,9 +2713,9 @@
     (pin "1" (uuid 844078bc-7898-434e-b5a9-23fa8474af62))
     (pin "2" (uuid f9607fae-dd6e-4837-87de-d4e7967c4c53))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "J6") (unit 1)
+          (reference "J?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "J4") (unit 1)
@@ -2742,7 +2742,7 @@
     (pin "1" (uuid 1dce883d-2c31-4b44-b96c-dd589aad9644))
     (pin "2" (uuid ec8adf40-9b2f-4c20-aec6-9aaac7b4b6cb))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R9") (unit 1)
         )
@@ -2753,7 +2753,7 @@
   (symbol (lib_id "Diode:1N4001") (at 256.54 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dc4fad3c-9f3c-4844-bfd6-26d97f1d3ce7)
-    (property "Reference" "D2" (at 259.08 41.91 0)
+    (property "Reference" "D?" (at 259.08 41.91 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1N4001" (at 251.46 45.72 0)
@@ -2774,9 +2774,9 @@
     (pin "1" (uuid 5a39e2fb-99df-4234-846f-0cbc9159a19a))
     (pin "2" (uuid 9e79eeb6-33fa-48b5-af2e-518e4d864329))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "D2") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "D13") (unit 1)
@@ -2788,7 +2788,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Socket") (at 224.79 59.69 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid de6c2632-8513-4be5-8a34-34588f396b1e)
-    (property "Reference" "J6" (at 226.06 57.785 90)
+    (property "Reference" "J?" (at 226.06 57.785 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Button11" (at 219.71 60.96 90)
@@ -2803,9 +2803,9 @@
     (pin "1" (uuid 3550970d-cf3d-4527-84d6-4c6f6a9f1b81))
     (pin "2" (uuid 5136f9be-7efb-4983-88cc-898119174c65))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "J6") (unit 1)
+          (reference "J?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "J6") (unit 1)
@@ -2817,7 +2817,7 @@
   (symbol (lib_id "Regulator_Linear:AMS1117-3.3") (at 139.7 81.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e1b5e650-8575-4014-b4ac-1b931a60ea3a)
-    (property "Reference" "U2" (at 139.7 74.93 0)
+    (property "Reference" "U?" (at 139.7 74.93 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AMS1117-3.3" (at 139.7 77.47 0)
@@ -2833,9 +2833,9 @@
     (pin "2" (uuid 6812fc36-2e03-4e02-babf-f140b6579b74))
     (pin "3" (uuid f3da7a34-7d9b-4c64-bfee-dd1903eb091c))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "U2") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "U4") (unit 1)
@@ -2847,7 +2847,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Socket") (at 223.52 119.38 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f0eb9fbb-b9d3-4a5d-b1bf-519ed9fec268)
-    (property "Reference" "J6" (at 224.79 117.475 90)
+    (property "Reference" "J?" (at 224.79 117.475 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Button31" (at 218.44 120.65 90)
@@ -2862,9 +2862,9 @@
     (pin "1" (uuid 60073aa2-98da-4fe3-a41b-858235994cd3))
     (pin "2" (uuid d843fb34-2fa0-4b93-9e7a-320e371033b9))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "J6") (unit 1)
+          (reference "J?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "J5") (unit 1)
@@ -2891,7 +2891,7 @@
     (pin "1" (uuid 39edc063-5005-4a76-bcb7-dace3c63fddf))
     (pin "2" (uuid 96961908-b4ca-482d-8f7c-7a842b6e663a))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R4") (unit 1)
         )
@@ -2917,7 +2917,7 @@
     (pin "1" (uuid d8663f04-8cdf-4544-b37f-5c4505b2d1ea))
     (pin "2" (uuid 21dec9c0-e187-4850-bc22-c1d5e8ed1224))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "R2") (unit 1)
         )
@@ -2928,7 +2928,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Socket") (at 236.22 143.51 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f7b0a572-6708-4030-8b97-b4dea544dafd)
-    (property "Reference" "J1" (at 237.49 140.97 90)
+    (property "Reference" "J?" (at 237.49 140.97 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Jumper" (at 231.14 144.78 90)
@@ -2943,9 +2943,9 @@
     (pin "1" (uuid e1453ba1-7ebe-4aba-85d0-b2151e1cea3e))
     (pin "2" (uuid be37b4bc-d8d5-433d-84fd-f6e6ad6c6a6d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
-          (reference "J1") (unit 1)
+          (reference "J?") (unit 1)
         )
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00/1a240a7e-f568-42db-b18f-d81f47de595d"
           (reference "J10") (unit 1)

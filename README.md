@@ -2,7 +2,7 @@
 
 ![Board Front](electronics/board_front.jpg)
 
-Welcome to the Multi-Door Garage Remote repository! This project aims to provide a versatile solution for remotely controlling multiple garage doors that operate on the 433MHz fixed code protocol. While the current implementation is based on the fixed code protocol, it has the potential to be extended to support rolling code protocols and other RF parameters. Additionally, there is a capability mentioned to open garage doors operating at 280MHz, although this feature is yet to be tested.
+Welcome to the Multi-Door Garage Remote repository! This project aims to provide a versatile solution for remotely controlling multiple garage doors that operate on the 433MHz fixed code protocol. While the current implementation is based on the fixed code protocol, it has the potential to be extended to support rolling code protocols and other RF parameters. Additionally, it has the necessary hardware to open garage doors operating at 280MHz, although this feature is yet to be implemented and tested.
 
 ## Features
 

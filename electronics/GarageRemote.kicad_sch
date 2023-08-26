@@ -2335,7 +2335,7 @@
     )
     (pin "1" (uuid 043bd07c-5142-4dbe-a946-f4adcd690919))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR015") (unit 1)
         )
@@ -2361,7 +2361,7 @@
     (pin "1" (uuid 221ec4da-6248-4c68-b41c-00e956ad4243))
     (pin "2" (uuid b8feefaf-7a1a-4cad-aa31-8a540c0163bf))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C5") (unit 1)
         )
@@ -2386,7 +2386,7 @@
     )
     (pin "1" (uuid bcc2068f-81c3-4649-a879-0c96baa98624))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR025") (unit 1)
         )
@@ -2412,7 +2412,7 @@
     (pin "1" (uuid 94e25344-be5a-4cc4-955b-3a22ee1cb757))
     (pin "2" (uuid d08862fd-09be-4593-a23c-cc452fe95dc2))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "R1") (unit 1)
         )
@@ -2471,7 +2471,7 @@
     (pin "8" (uuid d5ea5748-6be4-44d0-90a1-560dfa50fe08))
     (pin "9" (uuid b783021f-0b78-467d-b0ad-f1a3b8b3f437))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "U2") (unit 1)
         )
@@ -2496,7 +2496,7 @@
     )
     (pin "1" (uuid a323cafd-0eb0-427c-98c3-a83503f6c256))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR013") (unit 1)
         )
@@ -2521,7 +2521,7 @@
     )
     (pin "1" (uuid 28f4e2fa-51d6-47b8-a694-c4712e5be48d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR029") (unit 1)
         )
@@ -2549,7 +2549,7 @@
     (pin "3" (uuid 700fe74e-b11e-41ad-b7a7-72f884668545))
     (pin "4" (uuid 6848f9f4-7623-4f67-b2ab-baf2223dfba3))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "Y2") (unit 1)
         )
@@ -2575,7 +2575,7 @@
     (pin "1" (uuid 75975139-bc85-48bd-b298-5627141140f7))
     (pin "2" (uuid 9ade036b-c4e9-47fc-9645-d0107884e35b))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C17") (unit 1)
         )
@@ -2600,7 +2600,7 @@
     )
     (pin "1" (uuid 0f7888ef-e33b-4b7d-b265-5dea81225fb9))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR03") (unit 1)
         )
@@ -2626,7 +2626,7 @@
     (pin "1" (uuid 966e45bd-c184-4ac6-a301-56b36ace7e71))
     (pin "2" (uuid f6d63b6d-1241-456a-8d1a-66e3dd3e650d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C2") (unit 1)
         )
@@ -2651,7 +2651,7 @@
     )
     (pin "1" (uuid e5a8d53b-a341-4332-a431-17de331a23e9))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR018") (unit 1)
         )
@@ -2676,7 +2676,7 @@
     )
     (pin "1" (uuid f6d37385-ae9e-4a84-96de-7b17818f193f))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR014") (unit 1)
         )
@@ -2701,7 +2701,7 @@
     )
     (pin "1" (uuid ee727a65-a413-425b-9ee4-fbea12822395))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR05") (unit 1)
         )
@@ -2727,7 +2727,7 @@
     (pin "1" (uuid 4d1f53aa-5e6e-46e5-867e-758a2d556cd6))
     (pin "2" (uuid f0d1bedb-f6ab-4927-945a-c82ade7174c8))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "Y1") (unit 1)
         )
@@ -2753,7 +2753,7 @@
     (pin "1" (uuid 58642a2d-14ad-4f9c-af96-b1a2607972fd))
     (pin "2" (uuid 16ec9ecf-64b4-4af9-9f29-934376989b70))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C1") (unit 1)
         )
@@ -2783,7 +2783,7 @@
     (pin "5" (uuid 9c5f5325-57ac-4f52-a4f4-eb9e74def140))
     (pin "6" (uuid 54c674c5-b89a-404e-9aea-4dd5a297a77e))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "J3") (unit 1)
         )
@@ -2811,7 +2811,7 @@
     )
     (pin "1" (uuid d2c54cd1-2b2b-4c39-a571-3393f3150ca4))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR011") (unit 1)
         )
@@ -2855,7 +2855,7 @@
     (pin "8" (uuid 09ef3c56-0a88-496d-aac0-69b2673da4ac))
     (pin "9" (uuid dcb6734f-fdfe-4678-b284-a235def42eca))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "U1") (unit 1)
         )
@@ -2881,7 +2881,7 @@
     (pin "1" (uuid a2605272-8c92-4aa0-9027-cfd4ffa80531))
     (pin "2" (uuid 4647e0ef-4291-4f21-92a6-c82ab7a89040))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C11") (unit 1)
         )
@@ -2906,7 +2906,7 @@
     )
     (pin "1" (uuid a769d841-6b92-4528-b52f-b9b328e68dca))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR01") (unit 1)
         )
@@ -2931,7 +2931,7 @@
     )
     (pin "1" (uuid f03bc7dc-a3bd-4173-9178-0be7a2a78c82))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR07") (unit 1)
         )
@@ -2956,7 +2956,7 @@
     )
     (pin "1" (uuid 2ac9c2ca-2a3a-495f-bedb-9185f2d32521))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR04") (unit 1)
         )
@@ -2981,7 +2981,7 @@
     )
     (pin "1" (uuid 984d952d-d4a2-4c79-ba97-c6fdce4b6e8d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "AE1") (unit 1)
         )
@@ -3007,7 +3007,7 @@
     (pin "1" (uuid 18db9d67-b818-4a82-b63e-9754ce21513c))
     (pin "2" (uuid be9a7457-dd42-4f68-a83a-e8fe1eb936ac))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C7") (unit 1)
         )
@@ -3032,7 +3032,7 @@
     )
     (pin "1" (uuid c1f4e706-e8a9-4b2b-a94d-c280e2d47b29))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR024") (unit 1)
         )
@@ -3057,7 +3057,7 @@
     )
     (pin "1" (uuid 765fceb9-b8cf-4a42-89f1-1e7b9e440c77))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR031") (unit 1)
         )
@@ -3083,7 +3083,7 @@
     (pin "1" (uuid cf00477c-2171-4eb5-8d71-462b850b03f8))
     (pin "2" (uuid fedb996f-afa9-467f-b271-4c7f06fa81e7))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C19") (unit 1)
         )
@@ -3108,7 +3108,7 @@
     )
     (pin "1" (uuid dad79edc-8b81-473c-a286-3818e9d38478))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR037") (unit 1)
         )
@@ -3137,7 +3137,7 @@
     (pin "1" (uuid 7ef46356-49e5-4f20-897a-678d06d7cbc4))
     (pin "2" (uuid f2b2b13c-1569-49b7-8238-f13fc7f73ce1))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C16") (unit 1)
         )
@@ -3162,7 +3162,7 @@
     )
     (pin "1" (uuid c90c9271-0cdf-4d86-afd2-f27719629c06))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR012") (unit 1)
         )
@@ -3187,7 +3187,7 @@
     )
     (pin "1" (uuid 2757d622-8aba-4644-8fd6-00eb09aa45a1))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR033") (unit 1)
         )
@@ -3213,7 +3213,7 @@
     (pin "1" (uuid 9b729acc-9da4-4153-847f-99fec22659fa))
     (pin "2" (uuid d5f628b7-8516-4e26-aeda-2d9f5b4e18cd))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C6") (unit 1)
         )
@@ -3239,7 +3239,7 @@
     (pin "1" (uuid a54a8202-8e12-448c-afc2-beb7b65526c6))
     (pin "2" (uuid 1a1cea0e-db3d-4edd-ba1c-1488785f5460))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C14") (unit 1)
         )
@@ -3264,7 +3264,7 @@
     )
     (pin "1" (uuid 80d53988-8330-439b-95f7-c33fd5181a2d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR010") (unit 1)
         )
@@ -3290,7 +3290,7 @@
     (pin "1" (uuid cf839e2b-22fd-4e6e-b537-078f2883b258))
     (pin "2" (uuid 3ce08787-978d-48e9-8d29-06c7b57f344d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "L1") (unit 1)
         )
@@ -3316,7 +3316,7 @@
     (pin "1" (uuid 7975980c-d56f-43e1-bab2-855e05dd2309))
     (pin "2" (uuid 8fe58e48-45e9-4f34-a60a-11c3730a050d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C21") (unit 1)
         )
@@ -3341,7 +3341,7 @@
     )
     (pin "1" (uuid 650e538f-fee3-45e6-8910-0622b23af270))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR08") (unit 1)
         )
@@ -3366,7 +3366,7 @@
     )
     (pin "1" (uuid 75e66936-1047-4052-9ab9-ffe3ce4c01ed))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR026") (unit 1)
         )
@@ -3391,7 +3391,7 @@
     )
     (pin "1" (uuid 13bd2ed4-3172-45a3-b9c6-5a9bd963cbe4))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR019") (unit 1)
         )
@@ -3416,7 +3416,7 @@
     )
     (pin "1" (uuid ff1ca96f-8a08-4401-b7f3-6ce8d377592a))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR040") (unit 1)
         )
@@ -3445,7 +3445,7 @@
     (pin "1" (uuid c9e9a081-17c2-4e8c-876a-2fc4ba1c7611))
     (pin "2" (uuid fe6e70fb-4c49-4d55-91ea-38606e88436f))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C4") (unit 1)
         )
@@ -3471,7 +3471,7 @@
     (pin "1" (uuid c34638be-e9be-414a-9bec-acbd1d2ed105))
     (pin "2" (uuid 3afdd70b-2aa4-4033-ae7c-587cdcc1cd11))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C3") (unit 1)
         )
@@ -3503,7 +3503,7 @@
     (pin "7" (uuid fef3b7d5-0ded-47ec-84c2-2858b642286b))
     (pin "8" (uuid 554acd69-d5cd-4c3f-8726-de7c2cb4378a))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "J1") (unit 1)
         )
@@ -3529,7 +3529,7 @@
     (pin "1" (uuid 1bee9e56-89c9-4dfc-9f58-221ebc41d28b))
     (pin "2" (uuid 7572eb4f-7cc1-4a01-803b-be7027a214dc))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C13") (unit 1)
         )
@@ -3554,7 +3554,7 @@
     )
     (pin "1" (uuid 8e06f2c6-c9e6-4a09-8965-5564e293ad5b))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR036") (unit 1)
         )
@@ -3606,7 +3606,7 @@
     (pin "8" (uuid fd444c75-2c77-44a3-ad50-7d4bb0923c3f))
     (pin "9" (uuid f0e71690-56d5-4f6f-bf65-f0585cf1b5a0))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "U3") (unit 1)
         )
@@ -3631,7 +3631,7 @@
     )
     (pin "1" (uuid b84ad417-a7bc-4c22-b963-2ad779f87628))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR017") (unit 1)
         )
@@ -3656,7 +3656,7 @@
     )
     (pin "1" (uuid a83e8d16-0321-4b71-80b3-be4ef4677be7))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR034") (unit 1)
         )
@@ -3681,7 +3681,7 @@
     )
     (pin "1" (uuid c45a32ea-1db1-4adb-bf0e-468500822d4a))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR023") (unit 1)
         )
@@ -3707,7 +3707,7 @@
     (pin "1" (uuid 56d02def-51d0-4c66-a66a-f1e33721335b))
     (pin "2" (uuid cf1ad498-2c0e-4639-a2d1-dfb594aad96a))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C9") (unit 1)
         )
@@ -3733,7 +3733,7 @@
     (pin "1" (uuid 1ac5bdb1-fe5f-4fd3-83bc-8690d1768287))
     (pin "2" (uuid 5d73098f-ed73-434a-a269-3cd290c1b90f))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C12") (unit 1)
         )
@@ -3758,7 +3758,7 @@
     )
     (pin "1" (uuid bdfbe73c-965d-4d94-aed0-ecfd226ae226))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR022") (unit 1)
         )
@@ -3783,7 +3783,7 @@
     )
     (pin "1" (uuid d7fdcc16-78f2-497b-a04f-ae1b0476155a))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR027") (unit 1)
         )
@@ -3809,7 +3809,7 @@
     (pin "1" (uuid 6eaaed4b-e412-44cb-b039-8460f61182bd))
     (pin "2" (uuid 6b563745-a9fe-435b-bd61-50a00e41a276))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C20") (unit 1)
         )
@@ -3834,7 +3834,7 @@
     )
     (pin "1" (uuid 1cd0d411-317b-4497-94fb-edcac60aa057))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR032") (unit 1)
         )
@@ -3860,7 +3860,7 @@
     (pin "1" (uuid ff124a31-f5d1-41ba-abe9-add95653ed10))
     (pin "2" (uuid b1ac6988-a249-41bd-9211-4cbd74fe5cb0))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C10") (unit 1)
         )
@@ -3885,7 +3885,7 @@
     )
     (pin "1" (uuid 3523bcc0-17f5-4e04-af02-e23e7cf9e700))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR06") (unit 1)
         )
@@ -3910,7 +3910,7 @@
     )
     (pin "1" (uuid 80488d34-aff1-43ff-935a-da39f221fe81))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR020") (unit 1)
         )
@@ -3938,7 +3938,7 @@
     (pin "3" (uuid e3d37938-5e90-4531-838c-a5446b046a39))
     (pin "4" (uuid ba9ceb71-0ccb-4273-b9ae-9a09caeaf521))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "J2") (unit 1)
         )
@@ -3967,7 +3967,7 @@
     (pin "1" (uuid 900292a3-a3c0-4531-a7cc-260bb064a838))
     (pin "2" (uuid 1f0e81f9-2833-4927-b4b0-d9a9d6a24f38))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "L2") (unit 1)
         )
@@ -3992,7 +3992,7 @@
     )
     (pin "1" (uuid accc37f7-7960-461e-80da-6bb64f6f3a9d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR09") (unit 1)
         )
@@ -4017,7 +4017,7 @@
     )
     (pin "1" (uuid 08a4846e-ad54-4bbe-82c5-f11693851276))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR016") (unit 1)
         )
@@ -4042,7 +4042,7 @@
     )
     (pin "1" (uuid 73225ae0-853a-46f2-93a6-6e285d96372f))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR028") (unit 1)
         )
@@ -4067,7 +4067,7 @@
     )
     (pin "1" (uuid 54b0db09-a601-47b7-9bbf-56df01455591))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR030") (unit 1)
         )
@@ -4092,7 +4092,7 @@
     )
     (pin "1" (uuid 0f9243b2-29b9-4b90-a35f-791e9ba19648))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR02") (unit 1)
         )
@@ -4117,7 +4117,7 @@
     )
     (pin "1" (uuid 6d427a69-c94b-49b6-b81f-8ea4dfaa34a4))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR039") (unit 1)
         )
@@ -4145,7 +4145,7 @@
     )
     (pin "1" (uuid caf9d78a-bbda-44d8-8623-3244a072af5d))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "#PWR021") (unit 1)
         )
@@ -4171,7 +4171,7 @@
     (pin "1" (uuid 22649415-b848-4b0f-808d-22f11ff6e703))
     (pin "2" (uuid cedc87d0-ea66-42ed-bf2d-537b3566a1f1))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C15") (unit 1)
         )
@@ -4197,7 +4197,7 @@
     (pin "1" (uuid a4e94a8e-2c32-4e5b-a87d-4ddbd94808e2))
     (pin "2" (uuid 260dbe06-6544-4ee5-9625-2d15226e57cf))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C8") (unit 1)
         )
@@ -4223,7 +4223,7 @@
     (pin "1" (uuid 520e5e1d-d7be-438f-80f6-1276c9a7665a))
     (pin "2" (uuid 89ebd763-31d5-427f-acae-172f591d897f))
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00"
           (reference "C18") (unit 1)
         )
@@ -4238,11 +4238,11 @@
     (property "Sheetname" "Power Management" (at 138.43 115.57 0)
       (effects (font (size 2 2)) (justify left bottom))
     )
-    (property "Sheetfile" "power_management.kicad_sch" (at 137.16 187.96 0)
+    (property "Sheetfile" "PowerManagement.kicad_sch" (at 137.16 187.96 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
-      (project "garage_remote"
+      (project "GarageRemote"
         (path "/cc9343be-d495-47d7-be6c-39903be0eb00" (page "2"))
       )
     )
