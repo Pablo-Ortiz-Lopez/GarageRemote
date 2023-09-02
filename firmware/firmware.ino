@@ -7,11 +7,11 @@ void setup() {
   ELECHOUSE_cc1101.setSpiPin(13, 12, 11, 15);
   ELECHOUSE_cc1101.getCC1101();
 
-  pinMode(0, INPUT);
-  pinMode(1, INPUT);
   pinMode(2, INPUT);
   pinMode(3, INPUT);
+  pinMode(4, INPUT);
   pinMode(5, INPUT);
+  pinMode(6, INPUT);
   pinMode(7, INPUT);
 
   ELECHOUSE_cc1101.Init();             // must be set to initialize the cc1101!
@@ -29,15 +29,15 @@ void setup() {
 }
 
 uint8_t getChannel(uint8_t current) {
-  if (digitalRead(0))
-    return 1;
-  if (digitalRead(1))
-    return 2;
   if (digitalRead(2))
-    return 3;
+    return 1;
   if (digitalRead(3))
-    return 4;
+    return 2;
+  if (digitalRead(4))
+    return 3;
   if (digitalRead(5))
+    return 4;
+  if (digitalRead(6))
     return 5;
   if (digitalRead(7))
     return 6;
@@ -87,7 +87,6 @@ uint8_t codes[6][216] = {
 };
 
 uint8_t currentChannel = 0;
-float currentFrequency = 433.890;
 
 void loop() {
   uint8_t groups[7] = {0, 0, 0, 1, 1, 2, 2};
@@ -95,15 +94,10 @@ void loop() {
   uint8_t group = groups[channel];
 
   String channelNames[7] = {"None", "Casa 1", "Casa 2", "Javi 1", "Javi 2", "Piso 1", "Piso 2"};
-  float frequenciesMIN[3] = {
-      433.895, // Casa
-      433.885, // Javi
-      433.920  // Piso
-  };
-  float frequenciesMAX[3] = {
-      433.920, // Casa
-      433.910, // Javi
-      433.940  // Piso
+  float frequencies[3] = {
+      433.812, // Casa
+      433.812, // Javi
+      433.812  // Piso
   };
   float baudrates[3] = {
       3,    // Casa
@@ -118,21 +112,13 @@ void loop() {
 
   if (currentChannel != channel) {
     if (channel != 0) {
-      currentFrequency = frequenciesMIN[group];
+      ELECHOUSE_cc1101.setMHZ(frequencies[group]);
       ELECHOUSE_cc1101.setDRate(baudrates[group]);
     }
     currentChannel = channel;
   }
 
   if (channel != 0) {
-    const float frequencyMIN = frequenciesMIN[group];
-    const float frequencyMAX = frequenciesMAX[group];
-    if (currentFrequency < frequencyMAX)
-      currentFrequency += 0.001;
-    else
-      currentFrequency = frequencyMIN;
-    ELECHOUSE_cc1101.setMHZ(currentFrequency);
-
     uint8_t *code = codes[channel - 1];
     uint8_t codeLength = codeLengths[channel - 1];
     uint8_t codeDelay = codeDelays[group];
