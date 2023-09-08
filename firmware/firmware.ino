@@ -15,7 +15,7 @@ void setup() {
   pinMode(7, INPUT);
 
   ELECHOUSE_cc1101.Init();             // must be set to initialize the cc1101!
-  ELECHOUSE_cc1101.setGDO0(16);        // Set GDO0
+  ELECHOUSE_cc1101.setGDO(16,17);        // Set GDO0
   ELECHOUSE_cc1101.setCCMode(1);       // Set config for internal transmission mode.
   ELECHOUSE_cc1101.setPA(12);          // Set TxPower. The following settings are possible depending on the frequency band.  (-30  -20  -15  -10  -6    0    5    7    10   11   12) Default is max!
   ELECHOUSE_cc1101.setSyncMode(0);     // Combined sync-word qualifier mode. 0 = No preamble/sync. 1 = 16 sync word bits detected. 2 = 16/16 sync word bits detected. 3 = 30/32 sync word bits detected. 4 = No preamble/sync, carrier-sense above threshold. 5 = 15/16 + carrier-sense above threshold. 6 = 16/16 + carrier-sense above threshold. 7 = 30/32 + carrier-sense above threshold.
@@ -44,20 +44,7 @@ uint8_t getChannel(uint8_t current) {
   return 0;
 }
 
-void SendDataChunked(uint8_t *code, uint8_t codeLength) {
-  uint8_t chunkSize = 24;
-  uint8_t numChunks = (codeLength + chunkSize - 1) / chunkSize;
-
-  for (uint8_t i = 0; i < numChunks; i++) {
-    uint8_t remainingLength = codeLength - i * chunkSize;
-    uint8_t currentChunkSize = remainingLength < chunkSize ? remainingLength : chunkSize;
-
-    bool lastChunk = i == numChunks - 1;
-    ELECHOUSE_cc1101.SendData(&code[i * chunkSize], lastChunk ? currentChunkSize : currentChunkSize - 2);
-  }
-}
-
-uint8_t codeDelays[3] = {10, 45, 11};
+uint8_t codeDelays[3] = {10, 45, 7};
 uint8_t codeLengths[6] = {13, 13, 20, 20, 216, 216};
 uint8_t codes[6][216] = {
     {0xEE, 0x8E, 0xE8, 0x88, 0xEE, 0x8E, 0x88, 0xE8, 0xE8, 0xE8, 0x88, 0xE8, 0x80},                                           // Casa 1
@@ -122,7 +109,7 @@ void loop() {
     uint8_t *code = codes[channel - 1];
     uint8_t codeLength = codeLengths[channel - 1];
     uint8_t codeDelay = codeDelays[group];
-    SendDataChunked(code, codeLength);
+    ELECHOUSE_cc1101.SendData(code, codeLength);
 
     delay(codeDelay);
   }

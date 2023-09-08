@@ -118,7 +118,7 @@ void ELECHOUSE_CC1101::SpiEnd(void)
 ****************************************************************/
 void ELECHOUSE_CC1101::GDO_Set (void)
 {
-	pinMode(GDO0, OUTPUT);
+	pinMode(GDO0, INPUT);
 	pinMode(GDO2, INPUT);
 }
 /****************************************************************
@@ -398,11 +398,12 @@ void ELECHOUSE_CC1101::setModul(byte modul){
 void ELECHOUSE_CC1101::setCCMode(bool s){
 ccmode = s;
 if (ccmode == 1){
-SpiWriteReg(CC1101_IOCFG2,      0x0B);
+SpiWriteReg(CC1101_IOCFG2,      0x02);
 SpiWriteReg(CC1101_IOCFG0,      0x06);
 SpiWriteReg(CC1101_PKTCTRL0,    0x05);
 SpiWriteReg(CC1101_MDMCFG3,     0xF8);
 SpiWriteReg(CC1101_MDMCFG4,11+m4RxBw);
+SpiWriteReg(CC1101_FIFOTHR,     0x07);
 }else{
 SpiWriteReg(CC1101_IOCFG2,      0x0D);
 SpiWriteReg(CC1101_IOCFG0,      0x0D);
@@ -1183,17 +1184,26 @@ SendData(chartobyte,len);
 /****************************************************************
 *FUNCTION NAME:SendData
 *FUNCTION     :use CC1101 send data
-*INPUT        :txBuffer: data array to send; size: number of data to send, no more than 61
+*INPUT        :txBuffer: data array to send; size: number of data to send
 *OUTPUT       :none
 ****************************************************************/
 void ELECHOUSE_CC1101::SendData(byte *txBuffer,byte size)
 {
-  //SpiWriteReg(CC1101_TXFIFO,size);
-  SpiWriteBurstReg(CC1101_TXFIFO,txBuffer,size);      //write data to send
+  uint8_t burstBytes = min(64,size);
+  uint8_t leftBytes = size - burstBytes;
+  uint8_t pointer = burstBytes;
+  SpiWriteBurstReg(CC1101_TXFIFO,txBuffer,burstBytes);//write data to send
   SpiStrobe(CC1101_SIDLE);
-  SpiStrobe(CC1101_STX);                  //start send
-    while (!digitalRead(GDO0));               // Wait for GDO0 to be set -> sync transmitted  
-    while (digitalRead(GDO0));                // Wait for GDO0 to be cleared -> end of packet
+  SpiStrobe(CC1101_STX); //start send
+  while (!digitalRead(GDO0)); // Wait for GDO0 to be set -> sync transmitted  
+  while(leftBytes > 0){
+    burstBytes = min(31,leftBytes);
+    leftBytes = leftBytes - burstBytes;
+    while (digitalRead(GDO2)); // Wait for GDO2 to be cleared -> 31 bytes available on FIFO
+    SpiWriteBurstReg(CC1101_TXFIFO, &txBuffer[pointer],burstBytes);//write data to send
+    pointer += burstBytes;
+  }
+  while (digitalRead(GDO0)); // Wait for GDO0 to be cleared -> end of packet
   SpiStrobe(CC1101_SFTX);                 //flush TXfifo
   trxstate=1;
 }
