@@ -1,18 +1,5 @@
-/*
-  CC1101.cpp - CC1101 module library
-  Copyright (c) 2010 Michael.
-    Author: Michael, <www.elechouse.com>
-    Version: November 12, 2010
+/* Based on the CC1101 Driver by Elechouse (http://elechouse.com)*/
 
-  This library is designed to use CC1101/CC1100 module on Arduino platform.
-  CC1101/CC1100 module is an useful wireless module.Using the functions of the
-  library, you can easily send and receive data by the CC1101/CC1100 module.
-  Just have fun!
-  For the details, please refer to the datasheet of CC1100/CC1101.
-----------------------------------------------------------------------------------------------------------------
-cc1101 Driver for RC Switch. Mod by Little Satan. With permission to modify and publish Wilson Shen (ELECHOUSE).
-----------------------------------------------------------------------------------------------------------------
-*/
 #ifndef CC1101_SRC_DRV_h
 #define CC1101_SRC_DRV_h
 
@@ -117,9 +104,7 @@ private:
   void SpiStart(void);
   void SpiEnd(void);
   void GDO_Set(void);
-  void GDO0_Set(void);
   void Reset(void);
-  void setSpi(void);
   void RegConfigSettings(void);
   void Calibrate(void);
   void Split_PKTCTRL0(void);
@@ -132,13 +117,7 @@ public:
   void Init(void);
   byte SpiReadStatus(byte addr);
   void setSpiPin(byte sck, byte miso, byte mosi, byte ss);
-  void addSpiPin(byte sck, byte miso, byte mosi, byte ss, byte modul);
   void setGDO(byte gdo0, byte gdo2);
-  void setGDO0(byte gdo0);
-  void addGDO(byte gdo0, byte gdo2, byte modul);
-  void addGDO0(byte gdo0, byte modul);
-  void setModul(byte modul);
-  void setCCMode(bool s);
   void setModulation(byte m);
   void setPA(int p);
   void setMHZ(float mhz);

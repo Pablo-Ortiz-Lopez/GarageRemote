@@ -1,4 +1,5 @@
 /* Based on the CC1101 Driver by Elechouse (http://elechouse.com)*/
+
 #include <SPI.h>
 #include "CC1101.h"
 #include <Arduino.h>
@@ -29,7 +30,7 @@ byte GDO0_M[max_modul];
 byte GDO2_M[max_modul];
 byte gdo_set = 0;
 bool spi = 0;
-bool ccmode = 0;
+bool ccmode = 1;
 float MHz = 433.92;
 byte m4RxBw = 0;
 byte m4DaRa;
@@ -148,16 +149,6 @@ void CC1101::GDO_Set(void)
   pinMode(GDO2, INPUT);
 }
 /****************************************************************
- *FUNCTION NAME: GDO_Set()
- *FUNCTION     : set GDO0 for internal transmission mode.
- *INPUT        : none
- *OUTPUT       : none
- ****************************************************************/
-void CC1101::GDO0_Set(void)
-{
-  pinMode(GDO0, INPUT);
-}
-/****************************************************************
  *FUNCTION NAME:Reset
  *FUNCTION     :CC1101 reset //details refer datasheet of CC1101/CC1100//
  *INPUT        :none
@@ -185,7 +176,6 @@ void CC1101::Reset(void)
  ****************************************************************/
 void CC1101::Init(void)
 {
-  setSpi();
   SpiStart(); // spi initialization
   digitalWrite(SS_PIN, HIGH);
   digitalWrite(SCK_PIN, HIGH);
@@ -314,46 +304,8 @@ byte CC1101::SpiReadStatus(byte addr)
   return value;
 }
 /****************************************************************
- *FUNCTION NAME:SPI pin Settings
- *FUNCTION     :Set Spi pins
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
-void CC1101::setSpi(void)
-{
-  if (spi == 0)
-  {
-#if defined __AVR_ATmega168__ || defined __AVR_ATmega328P__
-    SCK_PIN = 13;
-    MISO_PIN = 12;
-    MOSI_PIN = 11;
-    SS_PIN = 10;
-#elif defined __AVR_ATmega1280__ || defined __AVR_ATmega2560__
-    SCK_PIN = 52;
-    MISO_PIN = 50;
-    MOSI_PIN = 51;
-    SS_PIN = 53;
-#elif ESP8266
-    SCK_PIN = 14;
-    MISO_PIN = 12;
-    MOSI_PIN = 13;
-    SS_PIN = 15;
-#elif ESP32
-    SCK_PIN = 18;
-    MISO_PIN = 19;
-    MOSI_PIN = 23;
-    SS_PIN = 5;
-#else
-    SCK_PIN = 13;
-    MISO_PIN = 12;
-    MOSI_PIN = 11;
-    SS_PIN = 10;
-#endif
-  }
-}
-/****************************************************************
- *FUNCTION NAME:COSTUM SPI
- *FUNCTION     :set costum spi pins.
+ *FUNCTION NAME:Custom SPI
+ *FUNCTION     :set custom spi pins.
  *INPUT        :none
  *OUTPUT       :none
  ****************************************************************/
@@ -366,20 +318,6 @@ void CC1101::setSpiPin(byte sck, byte miso, byte mosi, byte ss)
   SS_PIN = ss;
 }
 /****************************************************************
- *FUNCTION NAME:COSTUM SPI
- *FUNCTION     :set costum spi pins.
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
-void CC1101::addSpiPin(byte sck, byte miso, byte mosi, byte ss, byte modul)
-{
-  spi = 1;
-  SCK_PIN_M[modul] = sck;
-  MISO_PIN_M[modul] = miso;
-  MOSI_PIN_M[modul] = mosi;
-  SS_PIN_M[modul] = ss;
-}
-/****************************************************************
  *FUNCTION NAME:GDO Pin settings
  *FUNCTION     :set GDO Pins
  *INPUT        :none
@@ -390,92 +328,6 @@ void CC1101::setGDO(byte gdo0, byte gdo2)
   GDO0 = gdo0;
   GDO2 = gdo2;
   GDO_Set();
-}
-/****************************************************************
- *FUNCTION NAME:GDO0 Pin setting
- *FUNCTION     :set GDO0 Pin
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
-void CC1101::setGDO0(byte gdo0)
-{
-  GDO0 = gdo0;
-  GDO0_Set();
-}
-/****************************************************************
- *FUNCTION NAME:GDO Pin settings
- *FUNCTION     :add GDO Pins
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
-void CC1101::addGDO(byte gdo0, byte gdo2, byte modul)
-{
-  GDO0_M[modul] = gdo0;
-  GDO2_M[modul] = gdo2;
-  gdo_set = 2;
-  GDO_Set();
-}
-/****************************************************************
- *FUNCTION NAME:add GDO0 Pin
- *FUNCTION     :add GDO0 Pin
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
-void CC1101::addGDO0(byte gdo0, byte modul)
-{
-  GDO0_M[modul] = gdo0;
-  gdo_set = 1;
-  GDO0_Set();
-}
-/****************************************************************
- *FUNCTION NAME:set Modul
- *FUNCTION     :change modul
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
-void CC1101::setModul(byte modul)
-{
-  SCK_PIN = SCK_PIN_M[modul];
-  MISO_PIN = MISO_PIN_M[modul];
-  MOSI_PIN = MOSI_PIN_M[modul];
-  SS_PIN = SS_PIN_M[modul];
-  if (gdo_set == 1)
-  {
-    GDO0 = GDO0_M[modul];
-  }
-  else if (gdo_set == 2)
-  {
-    GDO0 = GDO0_M[modul];
-    GDO2 = GDO2_M[modul];
-  }
-}
-/****************************************************************
- *FUNCTION NAME:CCMode
- *FUNCTION     :Format of RX and TX data
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
-void CC1101::setCCMode(bool s)
-{
-  ccmode = s;
-  if (ccmode == 1)
-  {
-    SpiWriteReg(CC1101_IOCFG2, 0x02);
-    SpiWriteReg(CC1101_IOCFG0, 0x06);
-    SpiWriteReg(CC1101_PKTCTRL0, 0x05);
-    SpiWriteReg(CC1101_MDMCFG3, 0xF8);
-    SpiWriteReg(CC1101_MDMCFG4, 11 + m4RxBw);
-    SpiWriteReg(CC1101_FIFOTHR, 0x07);
-  }
-  else
-  {
-    SpiWriteReg(CC1101_IOCFG2, 0x0D);
-    SpiWriteReg(CC1101_IOCFG0, 0x0D);
-    SpiWriteReg(CC1101_PKTCTRL0, 0x32);
-    SpiWriteReg(CC1101_MDMCFG3, 0x93);
-    SpiWriteReg(CC1101_MDMCFG4, 7 + m4RxBw);
-  }
-  setModulation(modulation);
 }
 /****************************************************************
  *FUNCTION NAME:Modulation
@@ -873,7 +725,6 @@ void CC1101::setClb(byte b, byte s, byte e)
  ****************************************************************/
 bool CC1101::getCC1101(void)
 {
-  setSpi();
   if (SpiReadStatus(0x31) > 0)
   {
     return 1;
@@ -1493,7 +1344,14 @@ void CC1101::RegConfigSettings(void)
 {
   SpiWriteReg(CC1101_FSCTRL1, 0x06);
 
-  setCCMode(ccmode);
+  SpiWriteReg(CC1101_IOCFG2, 0x02);
+  SpiWriteReg(CC1101_IOCFG0, 0x06);
+  SpiWriteReg(CC1101_PKTCTRL0, 0x05);
+  SpiWriteReg(CC1101_MDMCFG3, 0xF8);
+  SpiWriteReg(CC1101_MDMCFG4, 11 + m4RxBw);
+  SpiWriteReg(CC1101_FIFOTHR, 0x07);
+  setModulation(modulation);
+
   setMHZ(MHz);
 
   SpiWriteReg(CC1101_MDMCFG1, 0x02);
