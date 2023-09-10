@@ -5,7 +5,6 @@
 #include <Arduino.h>
 #include <SPI.h>
 
-/****************************************************************/
 #define WRITE_BURST 0x40     // write burst
 #define READ_SINGLE 0x80     // read single
 #define READ_BURST 0xC0      // read burst
@@ -56,7 +55,6 @@ byte clb2[2] = {31, 38};
 byte clb3[2] = {65, 76};
 byte clb4[2] = {77, 79};
 
-/****************************************************************/
 uint8_t PA_TABLE[8]{0x00, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 //                       -30  -20  -15  -10   0    5    7    10
 uint8_t PA_TABLE_315[8]{
@@ -105,12 +103,10 @@ uint8_t PA_TABLE_915[10]{
     0xC3,
     0xC0,
 }; // 900 - 928
-/****************************************************************
- *FUNCTION NAME:SpiStart
- *FUNCTION     :spi communication start
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SpiStart
+FUNCTION     :spi communication start
+*/
 void CC1101::SpiStart(void) {
     // initialize the SPI pins
     pinMode(SCK_PIN, OUTPUT);
@@ -125,33 +121,29 @@ void CC1101::SpiStart(void) {
     SPI.begin();
 #endif
 }
-/****************************************************************
- *FUNCTION NAME:SpiEnd
- *FUNCTION     :spi communication disable
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SpiEnd
+FUNCTION     :spi communication disable
+*/
 void CC1101::SpiEnd(void) {
     // disable SPI
     SPI.endTransaction();
     SPI.end();
 }
-/****************************************************************
- *FUNCTION NAME: GDO_Set()
- *FUNCTION     : set GDO0,GDO2 pin for serial pinmode.
- *INPUT        : none
- *OUTPUT       : none
- ****************************************************************/
+/*
+FUNCTION NAME: GDO_Set()
+FUNCTION     : set GDO0,GDO2 pin for serial pinmode.
+INPUT        : none
+OUTPUT       : none
+*/
 void CC1101::GDO_Set(void) {
     pinMode(GDO0, INPUT);
     pinMode(GDO2, INPUT);
 }
-/****************************************************************
- *FUNCTION NAME:Reset
- *FUNCTION     :CC1101 reset //details refer datasheet of CC1101/CC1100//
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Reset
+FUNCTION     :CC1101 reset //details refer datasheet of CC1101/CC1100//
+*/
 void CC1101::Reset(void) {
     digitalWrite(SS_PIN, LOW);
     delay(1);
@@ -163,12 +155,10 @@ void CC1101::Reset(void) {
     while (digitalRead(MISO_PIN)){}
     digitalWrite(SS_PIN, HIGH);
 }
-/****************************************************************
- *FUNCTION NAME:Init
- *FUNCTION     :CC1101 initialization
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Init
+FUNCTION     :CC1101 initialization
+*/
 void CC1101::Init(void) {
     SpiStart(); // spi initialization
     digitalWrite(SS_PIN, HIGH);
@@ -178,12 +168,11 @@ void CC1101::Init(void) {
     RegConfigSettings(); // CC1101 register config
     SpiEnd();
 }
-/****************************************************************
- *FUNCTION NAME:SpiWriteReg
- *FUNCTION     :CC1101 write data to register
- *INPUT        :addr: register address; value: register value
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SpiWriteReg
+FUNCTION     :CC1101 write data to register
+INPUT        :addr: register address; value: register value
+*/
 void CC1101::SpiWriteReg(byte addr, byte value) {
     SpiStart();
     digitalWrite(SS_PIN, LOW);
@@ -193,12 +182,11 @@ void CC1101::SpiWriteReg(byte addr, byte value) {
     digitalWrite(SS_PIN, HIGH);
     SpiEnd();
 }
-/****************************************************************
- *FUNCTION NAME:SpiWriteBurstReg
- *FUNCTION     :CC1101 write burst data to register
- *INPUT        :addr: register address; buffer:register value array; num:number
- *to write OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SpiWriteBurstReg
+FUNCTION     :CC1101 write burst data to register
+INPUT        :addr: register address; buffer:register value array; num:number
+*/
 void CC1101::SpiWriteBurstReg(byte addr, byte *buffer, byte num) {
     byte i, temp;
     SpiStart();
@@ -212,12 +200,11 @@ void CC1101::SpiWriteBurstReg(byte addr, byte *buffer, byte num) {
     digitalWrite(SS_PIN, HIGH);
     SpiEnd();
 }
-/****************************************************************
- *FUNCTION NAME:SpiStrobe
- *FUNCTION     :CC1101 Strobe
- *INPUT        :strobe: command; //refer define in CC1101.h//
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SpiStrobe
+FUNCTION     :CC1101 Strobe
+INPUT        :strobe: command; //refer define in CC1101.h//
+*/
 void CC1101::SpiStrobe(byte strobe) {
     SpiStart();
     digitalWrite(SS_PIN, LOW);
@@ -226,12 +213,12 @@ void CC1101::SpiStrobe(byte strobe) {
     digitalWrite(SS_PIN, HIGH);
     SpiEnd();
 }
-/****************************************************************
- *FUNCTION NAME:SpiReadReg
- *FUNCTION     :CC1101 read data from register
- *INPUT        :addr: register address
- *OUTPUT       :register value
- ****************************************************************/
+/*
+FUNCTION NAME:SpiReadReg
+FUNCTION     :CC1101 read data from register
+INPUT        :addr: register address
+OUTPUT       :register value
+*/
 byte CC1101::SpiReadReg(byte addr) {
     byte temp, value;
     SpiStart();
@@ -245,12 +232,12 @@ byte CC1101::SpiReadReg(byte addr) {
     return value;
 }
 
-/****************************************************************
- *FUNCTION NAME:SpiReadBurstReg
- *FUNCTION     :CC1101 read burst data from register
- *INPUT        :addr: register address; buffer:array to store register value;
- *num: number to read OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SpiReadBurstReg
+FUNCTION     :CC1101 read burst data from register
+INPUT        :addr: register address; buffer:array to store register value;
+num: number to read OUTPUT       :none
+*/
 void CC1101::SpiReadBurstReg(byte addr, byte *buffer, byte num) {
     byte i, temp;
     SpiStart();
@@ -265,12 +252,12 @@ void CC1101::SpiReadBurstReg(byte addr, byte *buffer, byte num) {
     SpiEnd();
 }
 
-/****************************************************************
- *FUNCTION NAME:SpiReadStatus
- *FUNCTION     :CC1101 read status register
- *INPUT        :addr: register address
- *OUTPUT       :status value
- ****************************************************************/
+/*
+FUNCTION NAME:SpiReadStatus
+FUNCTION     :CC1101 read status register
+INPUT        :addr: register address
+OUTPUT       :status value
+*/
 byte CC1101::SpiReadStatus(byte addr) {
     byte value, temp;
     SpiStart();
@@ -283,12 +270,10 @@ byte CC1101::SpiReadStatus(byte addr) {
     SpiEnd();
     return value;
 }
-/****************************************************************
- *FUNCTION NAME:Custom SPI
- *FUNCTION     :set custom spi pins.
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Custom SPI
+FUNCTION     :set custom spi pins.
+*/
 void CC1101::setSpiPin(byte sck, byte miso, byte mosi, byte ss) {
     spi = 1;
     SCK_PIN = sck;
@@ -296,23 +281,19 @@ void CC1101::setSpiPin(byte sck, byte miso, byte mosi, byte ss) {
     MOSI_PIN = mosi;
     SS_PIN = ss;
 }
-/****************************************************************
- *FUNCTION NAME:GDO Pin settings
- *FUNCTION     :set GDO Pins
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:GDO Pin settings
+FUNCTION     :set GDO Pins
+*/
 void CC1101::setGDO(byte gdo0, byte gdo2) {
     GDO0 = gdo0;
     GDO2 = gdo2;
     GDO_Set();
 }
-/****************************************************************
- *FUNCTION NAME:Modulation
- *FUNCTION     :set CC1101 Modulation
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Modulation
+FUNCTION     :set CC1101 Modulation
+*/
 void CC1101::setModulation(byte m) {
     if (m > 4) {
         m = 4;
@@ -345,12 +326,10 @@ void CC1101::setModulation(byte m) {
     SpiWriteReg(CC1101_FREND0, frend0);
     setPA(pa);
 }
-/****************************************************************
- *FUNCTION NAME:PA Power
- *FUNCTION     :set CC1101 PA Power
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:PA Power
+FUNCTION     :set CC1101 PA Power
+*/
 void CC1101::setPA(int p) {
     int a;
     pa = p;
@@ -449,12 +428,10 @@ void CC1101::setPA(int p) {
     }
     SpiWriteBurstReg(CC1101_PATABLE, PA_TABLE, 8);
 }
-/****************************************************************
- *FUNCTION NAME:Frequency Calculator
- *FUNCTION     :Calculate the basic frequency.
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Frequency Calculator
+FUNCTION     :Calculate the basic frequency.
+*/
 void CC1101::setMHZ(float mhz) {
     byte freq2 = 0;
     byte freq1 = 0;
@@ -487,12 +464,10 @@ void CC1101::setMHZ(float mhz) {
 
     Calibrate();
 }
-/****************************************************************
- *FUNCTION NAME:Calibrate
- *FUNCTION     :Calibrate frequency
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Calibrate
+FUNCTION     :Calibrate frequency
+*/
 void CC1101::Calibrate(void) {
     if (MHz >= 300 && MHz <= 348) {
         SpiWriteReg(CC1101_FSCTRL0, map(MHz, 300, 348, clb1[0], clb1[1]));
@@ -548,12 +523,10 @@ void CC1101::Calibrate(void) {
         }
     }
 }
-/****************************************************************
- *FUNCTION NAME:Calibration offset
- *FUNCTION     :Set calibration offset
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Calibration offset
+FUNCTION     :Set calibration offset
+*/
 void CC1101::setClb(byte b, byte s, byte e) {
     if (b == 1) {
         clb1[0] = s;
@@ -569,12 +542,10 @@ void CC1101::setClb(byte b, byte s, byte e) {
         clb4[1] = e;
     }
 }
-/****************************************************************
- *FUNCTION NAME:getCC1101
- *FUNCTION     :Test Spi connection and return 1 when true.
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:getCC1101
+FUNCTION     :Test Spi connection and return 1 when true.
+*/
 bool CC1101::getCC1101(void) {
     if (SpiReadStatus(0x31) > 0) {
         return 1;
@@ -582,39 +553,33 @@ bool CC1101::getCC1101(void) {
         return 0;
     }
 }
-/****************************************************************
- *FUNCTION NAME:getMode
- *FUNCTION     :Return the Mode. Sidle = 0, TX = 1, Rx = 2.
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:getMode
+FUNCTION     :Return the Mode. Sidle = 0, TX = 1, Rx = 2.
+*/
 byte CC1101::getMode(void) {
     return trxstate;
 }
-/****************************************************************
- *FUNCTION NAME:Set Sync_Word
- *FUNCTION     :Sync Word
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set Sync_Word
+FUNCTION     :Sync Word
+*/
 void CC1101::setSyncWord(byte sh, byte sl) {
     SpiWriteReg(CC1101_SYNC1, sh);
     SpiWriteReg(CC1101_SYNC0, sl);
 }
-/****************************************************************
- *FUNCTION NAME:Set ADDR
- *FUNCTION     :Address used for packet filtration. Optional broadcast addresses
- *are 0 (0x00) and 255 (0xFF). INPUT        :none OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set ADDR
+FUNCTION     :Address used for packet filtration. Optional broadcast addresses
+are 0 (0x00) and 255 (0xFF). INPUT        :none OUTPUT       :none
+*/
 void CC1101::setAddr(byte v) {
     SpiWriteReg(CC1101_ADDR, v);
 }
-/****************************************************************
- *FUNCTION NAME:Set PQT
- *FUNCTION     :Preamble quality estimator threshold
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set PQT
+FUNCTION     :Preamble quality estimator threshold
+*/
 void CC1101::setPQT(byte v) {
     Split_PKTCTRL1();
     pc1PQT = 0;
@@ -624,12 +589,10 @@ void CC1101::setPQT(byte v) {
     pc1PQT = v * 32;
     SpiWriteReg(CC1101_PKTCTRL1, pc1PQT + pc1CRC_AF + pc1APP_ST + pc1ADRCHK);
 }
-/****************************************************************
- *FUNCTION NAME:Set CRC_AUTOFLUSH
- *FUNCTION     :Enable automatic flush of RX FIFO when CRC is not OK
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set CRC_AUTOFLUSH
+FUNCTION     :Enable automatic flush of RX FIFO when CRC is not OK
+*/
 void CC1101::setCRC_AF(bool v) {
     Split_PKTCTRL1();
     pc1CRC_AF = 0;
@@ -638,11 +601,11 @@ void CC1101::setCRC_AF(bool v) {
     }
     SpiWriteReg(CC1101_PKTCTRL1, pc1PQT + pc1CRC_AF + pc1APP_ST + pc1ADRCHK);
 }
-/****************************************************************
- *FUNCTION NAME:Set APPEND_STATUS
- *FUNCTION     :When enabled, two status bytes will be appended to the payload
- *of the packet INPUT        :none OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set APPEND_STATUS
+FUNCTION     :When enabled, two status bytes will be appended to the payload
+of the packet INPUT        :none OUTPUT       :none
+*/
 void CC1101::setAppendStatus(bool v) {
     Split_PKTCTRL1();
     pc1APP_ST = 0;
@@ -651,12 +614,10 @@ void CC1101::setAppendStatus(bool v) {
     }
     SpiWriteReg(CC1101_PKTCTRL1, pc1PQT + pc1CRC_AF + pc1APP_ST + pc1ADRCHK);
 }
-/****************************************************************
- *FUNCTION NAME:Set ADR_CHK
- *FUNCTION     :Controls address check configuration of received packages
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set ADR_CHK
+FUNCTION     :Controls address check configuration of received packages
+*/
 void CC1101::setAdrChk(byte v) {
     Split_PKTCTRL1();
     pc1ADRCHK = 0;
@@ -666,12 +627,10 @@ void CC1101::setAdrChk(byte v) {
     pc1ADRCHK = v;
     SpiWriteReg(CC1101_PKTCTRL1, pc1PQT + pc1CRC_AF + pc1APP_ST + pc1ADRCHK);
 }
-/****************************************************************
- *FUNCTION NAME:Set WHITE_DATA
- *FUNCTION     :Turn data whitening on / off.
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set WHITE_DATA
+FUNCTION     :Turn data whitening on / off.
+*/
 void CC1101::setWhiteData(bool v) {
     Split_PKTCTRL0();
     pc0WDATA = 0;
@@ -680,12 +639,10 @@ void CC1101::setWhiteData(bool v) {
     }
     SpiWriteReg(CC1101_PKTCTRL0, pc0WDATA + pc0PktForm + pc0CRC_EN + pc0LenConf);
 }
-/****************************************************************
- *FUNCTION NAME:Set PKT_FORMAT
- *FUNCTION     :Format of RX and TX data
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set PKT_FORMAT
+FUNCTION     :Format of RX and TX data
+*/
 void CC1101::setPktFormat(byte v) {
     Split_PKTCTRL0();
     pc0PktForm = 0;
@@ -695,12 +652,10 @@ void CC1101::setPktFormat(byte v) {
     pc0PktForm = v * 16;
     SpiWriteReg(CC1101_PKTCTRL0, pc0WDATA + pc0PktForm + pc0CRC_EN + pc0LenConf);
 }
-/****************************************************************
- *FUNCTION NAME:Set CRC
- *FUNCTION     :CRC calculation in TX and CRC check in RX
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set CRC
+FUNCTION     :CRC calculation in TX and CRC check in RX
+*/
 void CC1101::setCrc(bool v) {
     Split_PKTCTRL0();
     pc0CRC_EN = 0;
@@ -709,12 +664,10 @@ void CC1101::setCrc(bool v) {
     }
     SpiWriteReg(CC1101_PKTCTRL0, pc0WDATA + pc0PktForm + pc0CRC_EN + pc0LenConf);
 }
-/****************************************************************
- *FUNCTION NAME:Set LENGTH_CONFIG
- *FUNCTION     :Configure the packet length
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set LENGTH_CONFIG
+FUNCTION     :Configure the packet length
+*/
 void CC1101::setLengthConfig(byte v) {
     Split_PKTCTRL0();
     pc0LenConf = 0;
@@ -724,21 +677,17 @@ void CC1101::setLengthConfig(byte v) {
     pc0LenConf = v;
     SpiWriteReg(CC1101_PKTCTRL0, pc0WDATA + pc0PktForm + pc0CRC_EN + pc0LenConf);
 }
-/****************************************************************
- *FUNCTION NAME:Set PACKET_LENGTH
- *FUNCTION     :Indicates the packet length
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set PACKET_LENGTH
+FUNCTION     :Indicates the packet length
+*/
 void CC1101::setPacketLength(byte v) {
     SpiWriteReg(CC1101_PKTLEN, v);
 }
-/****************************************************************
- *FUNCTION NAME:Set DCFILT_OFF
- *FUNCTION     :Disable digital DC blocking filter before demodulator
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set DCFILT_OFF
+FUNCTION     :Disable digital DC blocking filter before demodulator
+*/
 void CC1101::setDcFilterOff(bool v) {
     Split_MDMCFG2();
     m2DCOFF = 0;
@@ -747,12 +696,10 @@ void CC1101::setDcFilterOff(bool v) {
     }
     SpiWriteReg(CC1101_MDMCFG2, m2DCOFF + m2MODFM + m2MANCH + m2SYNCM);
 }
-/****************************************************************
- *FUNCTION NAME:Set MANCHESTER
- *FUNCTION     :Enables Manchester encoding/decoding
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set MANCHESTER
+FUNCTION     :Enables Manchester encoding/decoding
+*/
 void CC1101::setManchester(bool v) {
     Split_MDMCFG2();
     m2MANCH = 0;
@@ -761,12 +708,10 @@ void CC1101::setManchester(bool v) {
     }
     SpiWriteReg(CC1101_MDMCFG2, m2DCOFF + m2MODFM + m2MANCH + m2SYNCM);
 }
-/****************************************************************
- *FUNCTION NAME:Set SYNC_MODE
- *FUNCTION     :Combined sync-word qualifier mode
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set SYNC_MODE
+FUNCTION     :Combined sync-word qualifier mode
+*/
 void CC1101::setSyncMode(byte v) {
     Split_MDMCFG2();
     m2SYNCM = 0;
@@ -776,12 +721,10 @@ void CC1101::setSyncMode(byte v) {
     m2SYNCM = v;
     SpiWriteReg(CC1101_MDMCFG2, m2DCOFF + m2MODFM + m2MANCH + m2SYNCM);
 }
-/****************************************************************
- *FUNCTION NAME:Set FEC
- *FUNCTION     :Enable Forward Error Correction (FEC)
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set FEC
+FUNCTION     :Enable Forward Error Correction (FEC)
+*/
 void CC1101::setFEC(bool v) {
     Split_MDMCFG1();
     m1FEC = 0;
@@ -790,12 +733,10 @@ void CC1101::setFEC(bool v) {
     }
     SpiWriteReg(CC1101_MDMCFG1, m1FEC + m1PRE + m1CHSP);
 }
-/****************************************************************
- *FUNCTION NAME:Set PRE
- *FUNCTION     :Sets the minimum number of preamble bytes to be transmitted.
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set PRE
+FUNCTION     :Sets the minimum number of preamble bytes to be transmitted.
+*/
 void CC1101::setPRE(byte v) {
     Split_MDMCFG1();
     m1PRE = 0;
@@ -805,22 +746,16 @@ void CC1101::setPRE(byte v) {
     m1PRE = v * 16;
     SpiWriteReg(CC1101_MDMCFG1, m1FEC + m1PRE + m1CHSP);
 }
-/****************************************************************
- *FUNCTION NAME:Set Channel
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set Channel
+*/
 void CC1101::setChannel(byte ch) {
     chan = ch;
     SpiWriteReg(CC1101_CHANNR, chan);
 }
-/****************************************************************
- *FUNCTION NAME:Set Channel spacing
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set Channel spacing
+*/
 void CC1101::setChsp(float f) {
     Split_MDMCFG1();
     byte MDMCFG0 = 0;
@@ -849,12 +784,9 @@ void CC1101::setChsp(float f) {
     SpiWriteReg(19, m1CHSP + m1FEC + m1PRE);
     SpiWriteReg(20, MDMCFG0);
 }
-/****************************************************************
- *FUNCTION NAME:Set Receive bandwidth
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set Receive bandwidth
+*/
 void CC1101::setRxBW(float f) {
     Split_MDMCFG4();
     int s1 = 3;
@@ -880,12 +812,9 @@ void CC1101::setRxBW(float f) {
     m4RxBw = s1 + s2;
     SpiWriteReg(16, m4RxBw + m4DaRa);
 }
-/****************************************************************
- *FUNCTION NAME:Set Data Rate
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set Data Rate
+*/
 void CC1101::setDRate(float d) {
     Split_MDMCFG4();
     float c = d;
@@ -915,12 +844,9 @@ void CC1101::setDRate(float d) {
     SpiWriteReg(16, m4RxBw + m4DaRa);
     SpiWriteReg(17, MDMCFG3);
 }
-/****************************************************************
- *FUNCTION NAME:Set Devitation
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Set Devitation
+*/
 void CC1101::setDeviation(float d) {
     float f = 1.586914;
     float v = 0.19836425;
@@ -946,12 +872,9 @@ void CC1101::setDeviation(float d) {
     }
     SpiWriteReg(21, c);
 }
-/****************************************************************
- *FUNCTION NAME:Split PKTCTRL0
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Split PKTCTRL0
+*/
 void CC1101::Split_PKTCTRL1(void) {
     int calc = SpiReadStatus(7);
     pc1PQT = 0;
@@ -974,12 +897,9 @@ void CC1101::Split_PKTCTRL1(void) {
         }
     }
 }
-/****************************************************************
- *FUNCTION NAME:Split PKTCTRL0
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Split PKTCTRL0
+*/
 void CC1101::Split_PKTCTRL0(void) {
     int calc = SpiReadStatus(8);
     pc0WDATA = 0;
@@ -1002,12 +922,9 @@ void CC1101::Split_PKTCTRL0(void) {
         }
     }
 }
-/****************************************************************
- *FUNCTION NAME:Split MDMCFG1
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Split MDMCFG1
+*/
 void CC1101::Split_MDMCFG1(void) {
     int calc = SpiReadStatus(19);
     m1FEC = 0;
@@ -1026,12 +943,9 @@ void CC1101::Split_MDMCFG1(void) {
         }
     }
 }
-/****************************************************************
- *FUNCTION NAME:Split MDMCFG2
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Split MDMCFG2
+*/
 void CC1101::Split_MDMCFG2(void) {
     int calc = SpiReadStatus(18);
     m2DCOFF = 0;
@@ -1054,12 +968,9 @@ void CC1101::Split_MDMCFG2(void) {
         }
     }
 }
-/****************************************************************
- *FUNCTION NAME:Split MDMCFG4
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Split MDMCFG4
+*/
 void CC1101::Split_MDMCFG4(void) {
     int calc = SpiReadStatus(16);
     m4RxBw = 0;
@@ -1077,11 +988,11 @@ void CC1101::Split_MDMCFG4(void) {
         }
     }
 }
-/****************************************************************
- *FUNCTION NAME:RegConfigSettings
- *FUNCTION     :CC1101 register config //details refer datasheet of
- *CC1101/CC1100// INPUT        :none OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:RegConfigSettings
+FUNCTION     :CC1101 register config //details refer datasheet of
+CC1101/CC1100// INPUT        :none OUTPUT       :none
+*/
 void CC1101::RegConfigSettings(void) {
     SpiWriteReg(CC1101_FSCTRL1, 0x06);
 
@@ -1118,58 +1029,48 @@ void CC1101::RegConfigSettings(void) {
     SpiWriteReg(CC1101_ADDR, 0x00);
     SpiWriteReg(CC1101_PKTLEN, 0x00);
 }
-/****************************************************************
- *FUNCTION NAME:SetTx
- *FUNCTION     :set CC1101 send data
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SetTx
+FUNCTION     :set CC1101 send data
+*/
 void CC1101::SetTx(void) {
     SpiStrobe(CC1101_SIDLE);
     SpiStrobe(CC1101_STX); // start send
     trxstate = 1;
 }
-/****************************************************************
- *FUNCTION NAME:SetRx
- *FUNCTION     :set CC1101 to receive state
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SetRx
+FUNCTION     :set CC1101 to receive state
+*/
 void CC1101::SetRx(void) {
     SpiStrobe(CC1101_SIDLE);
     SpiStrobe(CC1101_SRX); // start receive
     trxstate = 2;
 }
-/****************************************************************
- *FUNCTION NAME:SetTx
- *FUNCTION     :set CC1101 send data and change frequency
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SetTx
+FUNCTION     :set CC1101 send data and change frequency
+*/
 void CC1101::SetTx(float mhz) {
     SpiStrobe(CC1101_SIDLE);
     setMHZ(mhz);
     SpiStrobe(CC1101_STX); // start send
     trxstate = 1;
 }
-/****************************************************************
- *FUNCTION NAME:SetRx
- *FUNCTION     :set CC1101 to receive state and change frequency
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SetRx
+FUNCTION     :set CC1101 to receive state and change frequency
+*/
 void CC1101::SetRx(float mhz) {
     SpiStrobe(CC1101_SIDLE);
     setMHZ(mhz);
     SpiStrobe(CC1101_SRX); // start receive
     trxstate = 2;
 }
-/****************************************************************
- *FUNCTION NAME:RSSI Level
- *FUNCTION     :Calculating the RSSI Level
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:RSSI Level
+FUNCTION     :Calculating the RSSI Level
+*/
 int CC1101::getRssi(void) {
     int rssi;
     rssi = SpiReadStatus(CC1101_RSSI);
@@ -1180,54 +1081,46 @@ int CC1101::getRssi(void) {
     }
     return rssi;
 }
-/****************************************************************
- *FUNCTION NAME:LQI Level
- *FUNCTION     :get Lqi state
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:LQI Level
+FUNCTION     :get Lqi state
+*/
 byte CC1101::getLqi(void) {
     byte lqi;
     lqi = SpiReadStatus(CC1101_LQI);
     return lqi;
 }
-/****************************************************************
- *FUNCTION NAME:SetSres
- *FUNCTION     :Reset CC1101
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SetSres
+FUNCTION     :Reset CC1101
+*/
 void CC1101::setSres(void) {
     SpiStrobe(CC1101_SRES);
     trxstate = 0;
 }
-/****************************************************************
- *FUNCTION NAME:setSidle
- *FUNCTION     :set Rx / TX Off
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:setSidle
+FUNCTION     :set Rx / TX Off
+*/
 void CC1101::setSidle(void) {
     SpiStrobe(CC1101_SIDLE);
     trxstate = 0;
 }
-/****************************************************************
- *FUNCTION NAME:goSleep
- *FUNCTION     :set cc1101 Sleep on
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:goSleep
+FUNCTION     :set cc1101 Sleep on
+*/
 void CC1101::goSleep(void) {
     trxstate = 0;
     SpiStrobe(0x36); // Exit RX / TX, turn off frequency synthesizer and exit
     SpiStrobe(0x39); // Enter power down mode when CSn goes high.
 }
-/****************************************************************
- *FUNCTION NAME:Char direct SendData
- *FUNCTION     :use CC1101 send data
- *INPUT        :txBuffer: data array to send; size: number of data to send, no
- *more than 61 OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Char direct SendData
+FUNCTION     :use CC1101 send data
+INPUT        :txBuffer: data array to send; size: number of data to send, no
+more than 61 OUTPUT       :none
+*/
 void CC1101::SendData(char *txchar) {
     int len = strlen(txchar);
     byte chartobyte[len];
@@ -1236,12 +1129,11 @@ void CC1101::SendData(char *txchar) {
     }
     SendData(chartobyte, len);
 }
-/****************************************************************
- *FUNCTION NAME:SendData
- *FUNCTION     :use CC1101 send data
- *INPUT        :txBuffer: data array to send; size: number of data to send
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:SendData
+FUNCTION     :use CC1101 send data
+INPUT        :txBuffer: data array to send; size: number of data to send
+*/
 void CC1101::SendData(byte *txBuffer, byte size) {
     uint8_t burstBytes = min(64, size);
     uint8_t leftBytes = size - burstBytes;
@@ -1263,41 +1155,9 @@ void CC1101::SendData(byte *txBuffer, byte size) {
     SpiStrobe(CC1101_SFTX); // flush TXfifo
     trxstate = 1;
 }
-/****************************************************************
- *FUNCTION NAME:Char direct SendData
- *FUNCTION     :use CC1101 send data without GDO
- *INPUT        :txBuffer: data array to send; size: number of data to send, no
- *more than 61 OUTPUT       :none
- ****************************************************************/
-void CC1101::SendData(char *txchar, int t) {
-    int len = strlen(txchar);
-    byte chartobyte[len];
-    for (int i = 0; i < len; i++) {
-        chartobyte[i] = txchar[i];
-    }
-    SendData(chartobyte, len, t);
-}
-/****************************************************************
- *FUNCTION NAME:SendData
- *FUNCTION     :use CC1101 send data without GDO
- *INPUT        :txBuffer: data array to send; size: number of data to send, no
- *more than 61 OUTPUT       :none
- ****************************************************************/
-void CC1101::SendData(byte *txBuffer, byte size, int t) {
-    // SpiWriteReg(CC1101_TXFIFO,size);
-    SpiWriteBurstReg(CC1101_TXFIFO, txBuffer, size); // write data to send
-    SpiStrobe(CC1101_SIDLE);
-    SpiStrobe(CC1101_STX); // start send
-    delay(t);
-    SpiStrobe(CC1101_SFTX); // flush TXfifo
-    trxstate = 1;
-}
-/****************************************************************
- *FUNCTION NAME:Check CRC
- *FUNCTION     :none
- *INPUT        :none
- *OUTPUT       :none
- ****************************************************************/
+/*
+FUNCTION NAME:Check CRC
+*/
 bool CC1101::CheckCRC(void) {
     byte lqi = SpiReadStatus(CC1101_LQI);
     bool crc_ok = bitRead(lqi, 7);
@@ -1309,12 +1169,11 @@ bool CC1101::CheckCRC(void) {
         return 0;
     }
 }
-/****************************************************************
- *FUNCTION NAME:CheckRxFifo
- *FUNCTION     :check receive data or not
- *INPUT        :none
- *OUTPUT       :flag: 0 no data; 1 receive data
- ****************************************************************/
+/*
+FUNCTION NAME:CheckRxFifo
+FUNCTION     :check receive data or not
+OUTPUT       :flag: 0 no data; 1 receive data
+*/
 bool CC1101::CheckRxFifo(int t) {
     if (trxstate != 2) {
         SetRx();
@@ -1326,12 +1185,11 @@ bool CC1101::CheckRxFifo(int t) {
         return 0;
     }
 }
-/****************************************************************
- *FUNCTION NAME:CheckReceiveFlag
- *FUNCTION     :check receive data or not
- *INPUT        :none
- *OUTPUT       :flag: 0 no data; 1 receive data
- ****************************************************************/
+/*
+FUNCTION NAME:CheckReceiveFlag
+FUNCTION     :check receive data or not
+OUTPUT       :flag: 0 no data; 1 receive data
+*/
 byte CC1101::CheckReceiveFlag(void) {
     if (trxstate != 2) {
         SetRx();
@@ -1346,12 +1204,12 @@ byte CC1101::CheckReceiveFlag(void) {
         return 0;
     }
 }
-/****************************************************************
- *FUNCTION NAME:ReceiveData
- *FUNCTION     :read data received from RXfifo
- *INPUT        :rxBuffer: buffer to store data
- *OUTPUT       :size of data received
- ****************************************************************/
+/*
+FUNCTION NAME:ReceiveData
+FUNCTION     :read data received from RXfifo
+INPUT        :rxBuffer: buffer to store data
+OUTPUT       :size of data received
+*/
 byte CC1101::ReceiveData(byte *rxBuffer) {
     byte size;
     byte status[2];

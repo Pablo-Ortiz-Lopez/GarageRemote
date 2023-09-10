@@ -137,8 +137,6 @@ public:
   void goSleep(void);
   void SendData(byte *txBuffer, byte size);
   void SendData(char *txchar);
-  void SendData(byte *txBuffer, byte size, int t);
-  void SendData(char *txchar, int t);
   byte CheckReceiveFlag(void);
   byte ReceiveData(byte *rxBuffer);
   bool CheckCRC(void);
