@@ -5,7 +5,7 @@
 using namespace std;
 
 void setup() {
-    cc1101.setSpiPin(13, 12, 11, 15);
+    cc1101.setSpiPin(13, 12, 11, 8);
     cc1101.getCC1101();
 
     pinMode(2, INPUT);
@@ -16,7 +16,7 @@ void setup() {
     pinMode(7, INPUT);
 
     cc1101.Init();             // must be set to initialize the cc1101!
-    cc1101.setGDO(16, 17);     // Set GDO0
+    cc1101.setGDO(9, 10);     // Set GDO0
     cc1101.setPA(12);          // Set TxPower. The following settings are possible depending on the frequency band.  (-30  -20  -15  -10  -6    0    5    7    10   11   12) Default is max!
     cc1101.setSyncMode(0);     // Combined sync-word qualifier mode. 0 = No preamble/sync. 1 = 16 sync word bits detected. 2 = 16/16 sync word bits detected. 3 = 30/32 sync word bits detected. 4 = No preamble/sync, carrier-sense above threshold. 5 = 15/16 + carrier-sense above threshold. 6 = 16/16 + carrier-sense above threshold. 7 = 30/32 + carrier-sense above threshold.
     cc1101.setAddr(0);         // Address used for packet filtration. Optional broadcast addresses are 0 (0x00) and 255 (0xFF).

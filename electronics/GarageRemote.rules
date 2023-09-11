@@ -1,5 +1,5 @@
 
-(rules PCB garage_remote
+(rules PCB GarageRemote
   (snap_angle 
     fortyfive_degree
   )
@@ -11,18 +11,18 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 12)
+    (start_pass_no 1719)
     (layer_rule F.Cu
-      (active on)
-      (preferred_direction vertical)
-      (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 2.6)
-    )
-    (layer_rule B.Cu
       (active on)
       (preferred_direction horizontal)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 1.6)
+      (against_preferred_direction_trace_costs 2.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
     )
   )
   (rule
@@ -64,15 +64,11 @@
     )
   )
   (class "kicad_default"
-    GND VCC MOSI MISO SCK RESET RX TX
-    "/RF2_DATA2_3V3" "/MISO_3V3" "Net-(U3-XTAL2)" "Net-(U3-XTAL1)" "Net-(D1-A)" "/MOSI_3V3" "RF1_DATA1" "CSN_7060"
-    "RF1_ENABLE" "RF1_DATA" "CSN_CC1101" "RF2_DATA0" "RF2_DATA2" "/SCK_3V3" "/CSN_CC1101_3V3" "/RF2_DATA0_3V3"
-    "Net-(AE1-A)" PAVOUT PAOUT B22 B11 B21 B31 B12
-    B32 "Net-(D3-A)" "Net-(D2-A)" GP0VDD "POWER_ENABLE" "Net-(Q1-B)" "Net-(D11-A)" "Net-(D10-A)"
-    "Net-(Q1-C)" GND2 AVDD "unconnected-(U1-A1-Pad1)" "unconnected-(U1-A2-Pad3)" "unconnected-(U1-B2-Pad18)" "unconnected-(U1-B1-Pad20)" "Net-(C12-Pad2)"
-    "Net-(U5-R1)" "Net-(U5-0.6V)" "Net-(U5-R2)" "Net-(C10-Pad1)" "Net-(C7-Pad2)" "Net-(U2-PB7)" "Net-(U2-PB6)" "unconnected-(U6-VIN-Pad1)"
-    "unconnected-(U6-GND-Pad2)" "Net-(J11-Pin_1)" "Net-(J11-Pin_2)" "unconnected-(U2-ADC6-Pad19)" "unconnected-(U2-AREF-Pad20)" "unconnected-(U2-ADC7-Pad22)" "unconnected-(U2-PC4-Pad27)" "unconnected-(U2-PC5-Pad28)"
-    "Net-(D4-A)"
+    GND +3.3V MOSI MISO SCK RESET VBAT+ "Net-(D1-K)"
+    "Net-(D3-K)" "Net-(D5-K)" "Net-(D7-K)" "Net-(D10-K)" "Net-(D11-K)" "RF_DATA0" "CSN_CC1101" "RF_DATA2"
+    "VBAT-" "unconnected-(U2-PB6-Pad7)" "unconnected-(U2-PB7-Pad8)" "unconnected-(U2-PC0-Pad23)" "unconnected-(U2-PC1-Pad24)" "unconnected-(U2-PC2-Pad25)" B22 B11
+    B21 B31 B12 B32 "unconnected-(U2-PD0-Pad30)" "unconnected-(U2-PC3-Pad26)" "unconnected-(U2-PD1-Pad31)" "unconnected-(U2-ADC6-Pad19)"
+    "unconnected-(U2-AREF-Pad20)" "unconnected-(U2-ADC7-Pad22)" "unconnected-(U2-PC4-Pad27)" "unconnected-(U2-PC5-Pad28)"
     (clearance_class "kicad_default")
     (via_rule "kicad_default")
     (rule
