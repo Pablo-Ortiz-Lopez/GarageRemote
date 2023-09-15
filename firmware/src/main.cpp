@@ -8,12 +8,12 @@ void setup() {
     cc1101.setSpiPin(13, 12, 11, 8);
     cc1101.getCC1101();
 
-    pinMode(2, INPUT);
-    pinMode(3, INPUT);
-    pinMode(4, INPUT);
-    pinMode(5, INPUT);
-    pinMode(6, INPUT);
-    pinMode(7, INPUT);
+    pinMode(2, INPUT_PULLUP);
+    pinMode(3, INPUT_PULLUP);
+    pinMode(4, INPUT_PULLUP);
+    pinMode(5, INPUT_PULLUP);
+    pinMode(6, INPUT_PULLUP);
+    pinMode(7, INPUT_PULLUP);
 
     cc1101.Init();             // must be set to initialize the cc1101!
     cc1101.setGDO(9, 10);     // Set GDO0
@@ -29,17 +29,17 @@ void setup() {
 }
 
 uint8_t getChannel(uint8_t current) {
-    if (digitalRead(2))
+    if (!digitalRead(2))
         return 1;
-    if (digitalRead(3))
+    if (!digitalRead(3))
         return 2;
-    if (digitalRead(4))
+    if (!digitalRead(4))
         return 3;
-    if (digitalRead(5))
+    if (!digitalRead(5))
         return 4;
-    if (digitalRead(6))
+    if (!digitalRead(6))
         return 5;
-    if (digitalRead(7))
+    if (!digitalRead(7))
         return 6;
     return 0;
 }
