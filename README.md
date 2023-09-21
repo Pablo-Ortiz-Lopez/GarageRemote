@@ -18,8 +18,8 @@ This repository contains:
 1. **Electronics Design**: Detailed electronic schematics and PCB layouts to help you build the remote device.
 2. **Firmware**: The firmware code that runs on the microcontroller, allowing it to communicate with garage doors.
 3. **3D Printed Case Design** (Pending): The design files for the 3D printed case that will house the remote device.
-4. **Documentation**: Additional information can be found on my blog post:
-   1. [Introduction to the project](https://ortizma.com/p/garage-remote/)
+4. **Documentation**: Additional information can be found on my blog posts:
+   1. [Basics of Radio Communications](https://ortizma.com/p/reading-rf-signals/)
 
 ## Getting Started
 
