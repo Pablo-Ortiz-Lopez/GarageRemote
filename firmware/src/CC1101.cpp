@@ -1145,10 +1145,9 @@ void CC1101::SendData(byte *txBuffer, byte size) {
     while (leftBytes > 0) {
         burstBytes = min(31, leftBytes);
         leftBytes = leftBytes - burstBytes;
-        while (digitalRead(GDO2))
-            ; // Wait for GDO2 to be cleared -> 31 bytes available on FIFO
-        SpiWriteBurstReg(CC1101_TXFIFO, &txBuffer[pointer],
-                         burstBytes); // write data to send
+        //delay(17); // If GDO2 pin gets somehow broken, this might save you.
+        while (digitalRead(GDO2)){} // Wait for GDO2 to be cleared -> 31 bytes available on FIFO
+        SpiWriteBurstReg(CC1101_TXFIFO, &txBuffer[pointer], burstBytes); // write data to send
         pointer += burstBytes;
     }
     while (digitalRead(GDO0)){}                   // Wait for GDO0 to be cleared -> end of packet

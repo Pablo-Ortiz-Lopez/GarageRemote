@@ -1,3 +1,25 @@
+#define OLDBOARD 0
+
+#if OLDBOARD==1
+    #define BTN_PRESSED HIGH
+    #define BTN_MODE INPUT
+    #define ATMEGA_SCK 13
+    #define ATMEGA_MISO 12
+    #define ATMEGA_MOSI 11
+    #define CC1101_CSN 15
+    #define CC1101_GDO0 16
+    #define CC1101_GDO2 17
+#else
+    #define BTN_PRESSED LOW
+    #define BTN_MODE INPUT_PULLUP
+    #define ATMEGA_SCK 13
+    #define ATMEGA_MISO 12
+    #define ATMEGA_MOSI 11
+    #define CC1101_CSN 8
+    #define CC1101_GDO0 9
+    #define CC1101_GDO2 10
+#endif
+
 #include <Arduino.h>
 
 #include "CC1101.h"
@@ -5,19 +27,19 @@
 using namespace std;
 
 void setup() {
-    cc1101.setSpiPin(13, 12, 11, 8);
+    cc1101.setSpiPin(ATMEGA_SCK, ATMEGA_MISO, ATMEGA_MOSI, CC1101_CSN);
     cc1101.getCC1101();
 
-    pinMode(2, INPUT_PULLUP);
-    pinMode(3, INPUT_PULLUP);
-    pinMode(4, INPUT_PULLUP);
-    pinMode(5, INPUT_PULLUP);
-    pinMode(6, INPUT_PULLUP);
-    pinMode(7, INPUT_PULLUP);
+    pinMode(2, BTN_MODE);
+    pinMode(3, BTN_MODE);
+    pinMode(4, BTN_MODE);
+    pinMode(5, BTN_MODE);
+    pinMode(6, BTN_MODE);
+    pinMode(7, BTN_MODE);
 
     cc1101.Init();             // must be set to initialize the cc1101!
-    cc1101.setGDO(9, 10);     // Set GDO0
-    cc1101.setPA(12);          // Set TxPower. The following settings are possible depending on the frequency band.  (-30  -20  -15  -10  -6    0    5    7    10   11   12) Default is max!
+    cc1101.setGDO(CC1101_GDO0, CC1101_GDO2);     // Set GDO pins
+    cc1101.setPA(7);          // Set TxPower. The following settings are possible depending on the frequency band.  (-30  -20  -15  -10  -6    0    5    7    10   11   12) Default is max!
     cc1101.setSyncMode(0);     // Combined sync-word qualifier mode. 0 = No preamble/sync. 1 = 16 sync word bits detected. 2 = 16/16 sync word bits detected. 3 = 30/32 sync word bits detected. 4 = No preamble/sync, carrier-sense above threshold. 5 = 15/16 + carrier-sense above threshold. 6 = 16/16 + carrier-sense above threshold. 7 = 30/32 + carrier-sense above threshold.
     cc1101.setAddr(0);         // Address used for packet filtration. Optional broadcast addresses are 0 (0x00) and 255 (0xFF).
     cc1101.setWhiteData(0);    // Turn data whitening on / off. 0 = Whitening off. 1 = Whitening on.
@@ -29,17 +51,17 @@ void setup() {
 }
 
 uint8_t getChannel(uint8_t current) {
-    if (!digitalRead(2))
+    if (digitalRead(2) == BTN_PRESSED)
         return 1;
-    if (!digitalRead(3))
+    if (digitalRead(3) == BTN_PRESSED)
         return 2;
-    if (!digitalRead(4))
+    if (digitalRead(4) == BTN_PRESSED)
         return 3;
-    if (!digitalRead(5))
+    if (digitalRead(5) == BTN_PRESSED)
         return 4;
-    if (!digitalRead(6))
+    if (digitalRead(6) == BTN_PRESSED)
         return 5;
-    if (!digitalRead(7))
+    if (digitalRead(7) == BTN_PRESSED)
         return 6;
     return 0;
 }
