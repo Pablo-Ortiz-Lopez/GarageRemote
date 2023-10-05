@@ -1,47 +1,40 @@
 #include <Arduino.h>
+#include <SPI.h>
 
 using namespace std;
 
+const int chipSelectPin = 10; // Chip select (CS) pin
+
 void setup() {
-    Serial.begin(300);
-    pinMode(2, INPUT);
-    pinMode(3, INPUT);
-    pinMode(4, INPUT);
-    pinMode(5, INPUT);
-    pinMode(6, INPUT);
-    pinMode(7, INPUT);
-}
+  // Initialize SPI
+  SPI.begin();
+  
+  // Initialize Serial communication
+  Serial.begin(9600); // You can change the baud rate as needed
+  
+  // Set chipSelectPin as an output
+  pinMode(chipSelectPin, OUTPUT);
+  
+  // Invert chip select to select the device
+  digitalWrite(chipSelectPin, LOW);
 
-uint8_t getChannel(uint8_t current) {
-    if (digitalRead(2))
-        return 1;
-    if (digitalRead(3))
-        return 2;
-    if (digitalRead(4))
-        return 3;
-    if (digitalRead(5))
-        return 4;
-    if (digitalRead(6))
-        return 5;
-    if (digitalRead(7))
-        return 6;
-    return 0;
-}
+  // Send command to read from address 0
+  uint8_t read_command = 0x02; // Modify this command as needed
+  SPI.transfer(read_command);
 
-uint8_t currentChannel = 0;
+  // Read the value at address 0
+  uint8_t value = SPI.transfer(0x00); // You may send a dummy byte here
+
+  // Release the device by setting chipSelectPin high
+  digitalWrite(chipSelectPin, HIGH);
+
+  // Print the value to the Serial monitor
+  Serial.print("Value at address 0: ");
+  Serial.println(value);
+
+  // Now 'value' contains the byte read from address 0
+}
 
 void loop() {
-    uint8_t channel = getChannel(currentChannel);
-
-    String channelNames[7] = {"None", "Casa 1", "Casa 2", "Javi 1", "Javi 2", "Piso 1", "Piso 2"};
-    if (currentChannel != channel) {
-        //Serial.println(channelNames[channel]);
-        Serial.println("Hola");
-        currentChannel = channel;
-    }
-
-    if (channel != 0) {
-        delay(11);
-    }
-    delay(100);
+  // Your main code here
 }
