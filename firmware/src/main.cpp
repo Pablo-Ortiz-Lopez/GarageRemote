@@ -3,19 +3,16 @@
 #define CC1101_CSN 15
 #define CC1101_GDO0 16
 #define CC1101_GDO2 17
+#define ATMEGA_SCK 13
+#define ATMEGA_MISO 12
+#define ATMEGA_MOSI 11
 
 #if OLDBOARD==1
     #define BTN_PRESSED HIGH
     #define BTN_MODE INPUT
-    #define ATMEGA_SCK 13
-    #define ATMEGA_MISO 12
-    #define ATMEGA_MOSI 11
 #else
     #define BTN_PRESSED LOW
     #define BTN_MODE INPUT_PULLUP
-    #define ATMEGA_SCK 13
-    #define ATMEGA_MISO 12
-    #define ATMEGA_MOSI 11
 #endif
 
 #include <Arduino.h>
