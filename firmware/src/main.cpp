@@ -1,4 +1,4 @@
-#define OLDBOARD 0
+#define OLDBOARD 1
 
 #define CC1101_CSN 15
 #define CC1101_GDO0 16
