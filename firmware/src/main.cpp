@@ -1,3 +1,4 @@
+// In the new board, the input part of the board returns logic low when a button is pressed.
 #define OLDBOARD 1
 
 #define CC1101_CSN 15
@@ -22,9 +23,6 @@
 using namespace std;
 
 void setup() {
-    cc1101.setSpiPin(ATMEGA_SCK, ATMEGA_MISO, ATMEGA_MOSI, CC1101_CSN);
-    cc1101.getCC1101();
-
     pinMode(2, BTN_MODE);
     pinMode(3, BTN_MODE);
     pinMode(4, BTN_MODE);
@@ -32,9 +30,21 @@ void setup() {
     pinMode(6, BTN_MODE);
     pinMode(7, BTN_MODE);
 
+    while(
+        digitalRead(2) != BTN_PRESSED && 
+        digitalRead(3) != BTN_PRESSED && 
+        digitalRead(4) != BTN_PRESSED &&
+        digitalRead(5) != BTN_PRESSED &&
+        digitalRead(6) != BTN_PRESSED &&
+        digitalRead(7) != BTN_PRESSED 
+    ){}
+
+    cc1101.setSpiPin(ATMEGA_SCK, ATMEGA_MISO, ATMEGA_MOSI, CC1101_CSN);
+    cc1101.getCC1101();
+
     cc1101.Init();             // must be set to initialize the cc1101!
     cc1101.setGDO(CC1101_GDO0, CC1101_GDO2);     // Set GDO pins
-    cc1101.setPA(7);          // Set TxPower. The following settings are possible depending on the frequency band.  (-30  -20  -15  -10  -6    0    5    7    10   11   12) Default is max!
+    cc1101.setPA(12);          // Set TxPower. The following settings are possible depending on the frequency band.  (-30  -20  -15  -10  -6    0    5    7    10   11   12) Default is max!
     cc1101.setSyncMode(0);     // Combined sync-word qualifier mode. 0 = No preamble/sync. 1 = 16 sync word bits detected. 2 = 16/16 sync word bits detected. 3 = 30/32 sync word bits detected. 4 = No preamble/sync, carrier-sense above threshold. 5 = 15/16 + carrier-sense above threshold. 6 = 16/16 + carrier-sense above threshold. 7 = 30/32 + carrier-sense above threshold.
     cc1101.setAddr(0);         // Address used for packet filtration. Optional broadcast addresses are 0 (0x00) and 255 (0xFF).
     cc1101.setWhiteData(0);    // Turn data whitening on / off. 0 = Whitening off. 1 = Whitening on.
