@@ -22,6 +22,22 @@
 
 using namespace std;
 
+uint8_t getChannel() {
+    if (digitalRead(2) == BTN_PRESSED)
+        return 1;
+    if (digitalRead(3) == BTN_PRESSED)
+        return 2;
+    if (digitalRead(4) == BTN_PRESSED)
+        return 3;
+    if (digitalRead(5) == BTN_PRESSED)
+        return 4;
+    if (digitalRead(6) == BTN_PRESSED)
+        return 5;
+    if (digitalRead(7) == BTN_PRESSED)
+        return 6;
+    return 0;
+}
+
 void setup() {
     pinMode(2, BTN_MODE);
     pinMode(3, BTN_MODE);
@@ -30,14 +46,7 @@ void setup() {
     pinMode(6, BTN_MODE);
     pinMode(7, BTN_MODE);
 
-    while(
-        digitalRead(2) != BTN_PRESSED && 
-        digitalRead(3) != BTN_PRESSED && 
-        digitalRead(4) != BTN_PRESSED &&
-        digitalRead(5) != BTN_PRESSED &&
-        digitalRead(6) != BTN_PRESSED &&
-        digitalRead(7) != BTN_PRESSED 
-    ){}
+    while(getChannel() == 0){}
 
     cc1101.setSpiPin(ATMEGA_SCK, ATMEGA_MISO, ATMEGA_MOSI, CC1101_CSN);
     cc1101.getCC1101();
@@ -53,22 +62,6 @@ void setup() {
     cc1101.setDcFilterOff(0);  // Disable digital DC blocking filter before demodulator. Only for data rates ≤ 250 kBaud The recommended IF frequency changes when the DC blocking is disabled. 1 = Disable (current optimized). 0 = Enable (better sensitivity).
     cc1101.setPRE(0);          // Sets the minimum number of preamble bytes to be transmitted. Values: 0 : 2, 1 : 3, 2 : 4, 3 : 6, 4 : 8, 5 : 12, 6 : 16, 7 : 24
     cc1101.setAppendStatus(0); // When enabled, two status bytes will be appended to the payload of the packet. The status bytes contain RSSI and LQI values, as well as CRC OK.
-}
-
-uint8_t getChannel(uint8_t current) {
-    if (digitalRead(2) == BTN_PRESSED)
-        return 1;
-    if (digitalRead(3) == BTN_PRESSED)
-        return 2;
-    if (digitalRead(4) == BTN_PRESSED)
-        return 3;
-    if (digitalRead(5) == BTN_PRESSED)
-        return 4;
-    if (digitalRead(6) == BTN_PRESSED)
-        return 5;
-    if (digitalRead(7) == BTN_PRESSED)
-        return 6;
-    return 0;
 }
 
 uint8_t codeDelays[3] = {10, 45, 7};
@@ -104,7 +97,7 @@ uint8_t currentChannel = 0;
 
 void loop() {
     uint8_t groups[7] = {0, 0, 0, 1, 1, 2, 2};
-    uint8_t channel = getChannel(currentChannel);
+    uint8_t channel = getChannel();
     uint8_t group = groups[channel];
 
     String channelNames[7] = {"None", "Casa 1", "Casa 2", "Javi 1", "Javi 2", "Piso 1", "Piso 2"};
