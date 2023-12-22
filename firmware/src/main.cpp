@@ -1,4 +1,5 @@
-#define OLDBOARD 0
+// In the new board, the input part of the board returns logic low when a button is pressed.
+#define OLDBOARD 1
 
 #define CC1101_CSN 15
 #define CC1101_GDO0 16
@@ -22,15 +23,24 @@
 using namespace std;
 
 void setup() {
-    cc1101.setSpiPin(ATMEGA_SCK, ATMEGA_MISO, ATMEGA_MOSI, CC1101_CSN);
-    cc1101.getCC1101();
-
     pinMode(2, BTN_MODE);
     pinMode(3, BTN_MODE);
     pinMode(4, BTN_MODE);
     pinMode(5, BTN_MODE);
     pinMode(6, BTN_MODE);
     pinMode(7, BTN_MODE);
+
+    while(
+        digitalRead(2) != BTN_PRESSED && 
+        digitalRead(3) != BTN_PRESSED && 
+        digitalRead(4) != BTN_PRESSED &&
+        digitalRead(5) != BTN_PRESSED &&
+        digitalRead(6) != BTN_PRESSED &&
+        digitalRead(7) != BTN_PRESSED 
+    ){}
+
+    cc1101.setSpiPin(ATMEGA_SCK, ATMEGA_MISO, ATMEGA_MOSI, CC1101_CSN);
+    cc1101.getCC1101();
 
     cc1101.Init();             // must be set to initialize the cc1101!
     cc1101.setGDO(CC1101_GDO0, CC1101_GDO2);     // Set GDO pins
