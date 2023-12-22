@@ -1,5 +1,5 @@
 // In the new board, the input part of the board returns logic low when a button is pressed.
-#define OLDBOARD 1
+#define OLDBOARD 0
 
 #define CC1101_CSN 15
 #define CC1101_GDO0 16
