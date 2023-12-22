@@ -22,40 +22,7 @@
 
 using namespace std;
 
-void setup() {
-    pinMode(2, BTN_MODE);
-    pinMode(3, BTN_MODE);
-    pinMode(4, BTN_MODE);
-    pinMode(5, BTN_MODE);
-    pinMode(6, BTN_MODE);
-    pinMode(7, BTN_MODE);
-
-    while(
-        digitalRead(2) != BTN_PRESSED && 
-        digitalRead(3) != BTN_PRESSED && 
-        digitalRead(4) != BTN_PRESSED &&
-        digitalRead(5) != BTN_PRESSED &&
-        digitalRead(6) != BTN_PRESSED &&
-        digitalRead(7) != BTN_PRESSED 
-    ){}
-
-    cc1101.setSpiPin(ATMEGA_SCK, ATMEGA_MISO, ATMEGA_MOSI, CC1101_CSN);
-    cc1101.getCC1101();
-
-    cc1101.Init();             // must be set to initialize the cc1101!
-    cc1101.setGDO(CC1101_GDO0, CC1101_GDO2);     // Set GDO pins
-    cc1101.setPA(12);          // Set TxPower. The following settings are possible depending on the frequency band.  (-30  -20  -15  -10  -6    0    5    7    10   11   12) Default is max!
-    cc1101.setSyncMode(0);     // Combined sync-word qualifier mode. 0 = No preamble/sync. 1 = 16 sync word bits detected. 2 = 16/16 sync word bits detected. 3 = 30/32 sync word bits detected. 4 = No preamble/sync, carrier-sense above threshold. 5 = 15/16 + carrier-sense above threshold. 6 = 16/16 + carrier-sense above threshold. 7 = 30/32 + carrier-sense above threshold.
-    cc1101.setAddr(0);         // Address used for packet filtration. Optional broadcast addresses are 0 (0x00) and 255 (0xFF).
-    cc1101.setWhiteData(0);    // Turn data whitening on / off. 0 = Whitening off. 1 = Whitening on.
-    cc1101.setLengthConfig(2); // 0 = Fixed packet length mode. 1 = Variable packet length mode. 2 = Infinite packet length mode. 3 = Reserved
-    cc1101.setCrc(0);          // 1 = CRC calculation in TX and CRC check in RX enabled. 0 = CRC disabled for TX and RX.
-    cc1101.setDcFilterOff(0);  // Disable digital DC blocking filter before demodulator. Only for data rates ≤ 250 kBaud The recommended IF frequency changes when the DC blocking is disabled. 1 = Disable (current optimized). 0 = Enable (better sensitivity).
-    cc1101.setPRE(0);          // Sets the minimum number of preamble bytes to be transmitted. Values: 0 : 2, 1 : 3, 2 : 4, 3 : 6, 4 : 8, 5 : 12, 6 : 16, 7 : 24
-    cc1101.setAppendStatus(0); // When enabled, two status bytes will be appended to the payload of the packet. The status bytes contain RSSI and LQI values, as well as CRC OK.
-}
-
-uint8_t getChannel(uint8_t current) {
+uint8_t getChannel() {
     if (digitalRead(2) == BTN_PRESSED)
         return 1;
     if (digitalRead(3) == BTN_PRESSED)
@@ -69,6 +36,32 @@ uint8_t getChannel(uint8_t current) {
     if (digitalRead(7) == BTN_PRESSED)
         return 6;
     return 0;
+}
+
+void setup() {
+    pinMode(2, BTN_MODE);
+    pinMode(3, BTN_MODE);
+    pinMode(4, BTN_MODE);
+    pinMode(5, BTN_MODE);
+    pinMode(6, BTN_MODE);
+    pinMode(7, BTN_MODE);
+
+    while(getChannel() == 0){}
+
+    cc1101.setSpiPin(ATMEGA_SCK, ATMEGA_MISO, ATMEGA_MOSI, CC1101_CSN);
+    cc1101.getCC1101();
+
+    cc1101.Init();             // must be set to initialize the cc1101!
+    cc1101.setGDO(CC1101_GDO0, CC1101_GDO2);     // Set GDO pins
+    cc1101.setPA(7);          // Set TxPower. The following settings are possible depending on the frequency band.  (-30  -20  -15  -10  -6    0    5    7    10   11   12) Default is max!
+    cc1101.setSyncMode(0);     // Combined sync-word qualifier mode. 0 = No preamble/sync. 1 = 16 sync word bits detected. 2 = 16/16 sync word bits detected. 3 = 30/32 sync word bits detected. 4 = No preamble/sync, carrier-sense above threshold. 5 = 15/16 + carrier-sense above threshold. 6 = 16/16 + carrier-sense above threshold. 7 = 30/32 + carrier-sense above threshold.
+    cc1101.setAddr(0);         // Address used for packet filtration. Optional broadcast addresses are 0 (0x00) and 255 (0xFF).
+    cc1101.setWhiteData(0);    // Turn data whitening on / off. 0 = Whitening off. 1 = Whitening on.
+    cc1101.setLengthConfig(2); // 0 = Fixed packet length mode. 1 = Variable packet length mode. 2 = Infinite packet length mode. 3 = Reserved
+    cc1101.setCrc(0);          // 1 = CRC calculation in TX and CRC check in RX enabled. 0 = CRC disabled for TX and RX.
+    cc1101.setDcFilterOff(0);  // Disable digital DC blocking filter before demodulator. Only for data rates ≤ 250 kBaud The recommended IF frequency changes when the DC blocking is disabled. 1 = Disable (current optimized). 0 = Enable (better sensitivity).
+    cc1101.setPRE(0);          // Sets the minimum number of preamble bytes to be transmitted. Values: 0 : 2, 1 : 3, 2 : 4, 3 : 6, 4 : 8, 5 : 12, 6 : 16, 7 : 24
+    cc1101.setAppendStatus(0); // When enabled, two status bytes will be appended to the payload of the packet. The status bytes contain RSSI and LQI values, as well as CRC OK.
 }
 
 uint8_t codeDelays[3] = {10, 45, 7};
@@ -104,7 +97,7 @@ uint8_t currentChannel = 0;
 
 void loop() {
     uint8_t groups[7] = {0, 0, 0, 1, 1, 2, 2};
-    uint8_t channel = getChannel(currentChannel);
+    uint8_t channel = getChannel();
     uint8_t group = groups[channel];
 
     String channelNames[7] = {"None", "Casa 1", "Casa 2", "Javi 1", "Javi 2", "Piso 1", "Piso 2"};
