@@ -128,6 +128,4 @@ void loop() {
 
         delay(codeDelay);
     }
-}       delay(codeDelay);
-    }
 }
