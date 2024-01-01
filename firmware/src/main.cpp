@@ -64,7 +64,7 @@ void setup() {
     cc1101.setAppendStatus(0); // When enabled, two status bytes will be appended to the payload of the packet. The status bytes contain RSSI and LQI values, as well as CRC OK.
 }
 
-uint8_t codeDelays[3] = {10, 45, 7};
+uint8_t codeDelays[3] = {0, 45, 7};
 uint8_t codeLengths[6] = {13, 13, 20, 20, 216, 216};
 uint8_t codes[6][216] = {
     {0xEE, 0x8E, 0xE8, 0x88, 0xEE, 0x8E, 0x88, 0xE8, 0xE8, 0xE8, 0x88, 0xE8, 0x80},                                           // Casa 1
